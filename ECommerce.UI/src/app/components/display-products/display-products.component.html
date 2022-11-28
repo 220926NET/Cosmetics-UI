@@ -1,11 +1,20 @@
 <app-navbar></app-navbar>
-<div class="container">
-    <div class="row align-items-start">
-       <div class="col" *ngFor="let product of allProducts">
-            <app-product-card
-                class="cardListItem"
-                [productInfo]="product"
-            ></app-product-card> 
-        </div> 
-    </div>
+<div class="sidebar">
+  <app-sidebar (selectedProduct)="getSelectedProduct($event)"></app-sidebar>
 </div>
+<span class="btn btn-prev" (click)="DecrementProductCount()" [hidden]="productCount == 6"
+  ><</span
+>
+<span class="btn btn-next" (click)="IncrementProductCount()" [hidden]="productCount > products.length">></span>
+<div class="container">
+  <div class="row align-items-start">
+    <div class="col" *ngFor="let product of productsToShow; let i = index">
+      <app-product-card
+        class="cardListItem"
+        [productInfo]="product"
+      ></app-product-card>
+    </div>
+  </div>
+
+</div>
+<span class="page-count">page {{page}}</span>

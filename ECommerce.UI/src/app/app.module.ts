@@ -14,6 +14,7 @@ import { HttpClientModule } from '@angular/common/http';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { ProductPageComponent } from './components/product-page/product-page.component';
 import { ProductReviewComponent } from './components/product-review/product-review.component';
+import { SidebarComponent } from './components/sidebar/sidebar.component';
 
 @NgModule({
   declarations: [
@@ -26,16 +27,17 @@ import { ProductReviewComponent } from './components/product-review/product-revi
     CheckoutComponent,
     DisplayProductsComponent,
     ProductPageComponent,
-    ProductReviewComponent
+    ProductReviewComponent,
+    SidebarComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     HttpClientModule,
     FormsModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
   ],
   providers: [],
-  bootstrap: [AppComponent]
+  bootstrap: [AppComponent],
 })
-export class AppModule { }
+export class AppModule {}
