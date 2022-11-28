@@ -1,11 +1,18 @@
 <app-navbar></app-navbar>
+<div class="sidebar">
+  <app-sidebar (selectedProduct)="getSelectedProduct($event)"></app-sidebar>
+</div>
+<span class="btn btn-prev" (click)="DecrementProductCount()" [hidden]=""
+  ><</span
+>
+<span class="btn btn-next" (click)="IncrementProductCount()">></span>
 <div class="container">
-    <div class="row align-items-start">
-       <div class="col" *ngFor="let product of allProducts">
-            <app-product-card
-                class="cardListItem"
-                [productInfo]="product"
-            ></app-product-card> 
-        </div> 
+  <div class="row align-items-start">
+    <div class="col" *ngFor="let product of productsToShow; let i = index">
+      <app-product-card
+        class="cardListItem"
+        [productInfo]="product"
+      ></app-product-card>
     </div>
+  </div>
 </div>

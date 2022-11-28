@@ -7,23 +7,22 @@ import { environment } from 'src/environments/environment';
 interface Cart {
   cartCount: number;
   products: {
-    product: Product,
-    quantity: number
+    product: Product;
+    quantity: number;
   }[];
   totalPrice: number;
 }
 
 @Injectable({
-  providedIn: 'root'
+  providedIn: 'root',
 })
 export class ProductService {
-
-  private productUrl: string = "/api/product";
+  private productUrl: string = '/Product/';
 
   private _cart = new BehaviorSubject<Cart>({
     cartCount: 0,
     products: [],
-    totalPrice: 0.00
+    totalPrice: 0.0,
   });
 
   private _cart$ = this._cart.asObservable();
@@ -36,18 +35,33 @@ export class ProductService {
     return this._cart.next(latestValue);
   }
 
-  constructor(private http: HttpClient) { }
+  constructor(private http: HttpClient) {}
 
-  public getProducts(): Observable<Product[]> {
-    return this.http.get<Product[]>(environment.baseUrl+this.productUrl, {headers: environment.headers, withCredentials: environment.withCredentials});
+  public getProducts(product: string): Observable<Product[]> {
+    return this.http.get<Product[]>(
+      environment.baseUrl + this.productUrl + product,
+      {
+        headers: environment.headers,
+        withCredentials: environment.withCredentials,
+      }
+    );
   }
 
   public getSingleProduct(id: number): Observable<Product> {
-    return this.http.get<Product>(environment.baseUrl+id);
+    return this.http.get<Product>(environment.baseUrl + id);
   }
 
-  public purchase(products: {id:number, quantity:number}[]): Observable<any> {
+  public purchase(
+    products: { id: number; quantity: number }[]
+  ): Observable<any> {
     const payload = JSON.stringify(products);
-    return this.http.patch<any>(environment.baseUrl+this.productUrl, payload, {headers: environment.headers, withCredentials: environment.withCredentials})
+    return this.http.patch<any>(
+      environment.baseUrl + this.productUrl,
+      payload,
+      {
+        headers: environment.headers,
+        withCredentials: environment.withCredentials,
+      }
+    );
   }
 }
