@@ -3,6 +3,7 @@ import { HttpClient } from '@angular/common/http';
 import { BehaviorSubject, Observable } from 'rxjs';
 import { Product } from '../models/product';
 import { environment } from 'src/environments/environment';
+import { ProductDetails } from '../models/ProductDetails/ProductDetails';
 
 interface Cart {
   cartCount: number;
@@ -37,8 +38,8 @@ export class ProductService {
 
   constructor(private http: HttpClient) {}
 
-  public getProducts(product: string): Observable<Product[]> {
-    return this.http.get<Product[]>(
+  public getProducts(product: string): Observable<ProductDetails[]> {
+    return this.http.get<ProductDetails[]>(
       environment.baseUrl + this.productUrl + product,
       {
         headers: environment.headers,

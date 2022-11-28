@@ -30,6 +30,11 @@
   text-align: center;
 }
 
+.page-count {
+  position: absolute;
+  bottom: 100px;
+  left: 50%;
+}
 /* small size viewport */
 @media screen and (max-width: 640px) {
   /* Item sizing */
