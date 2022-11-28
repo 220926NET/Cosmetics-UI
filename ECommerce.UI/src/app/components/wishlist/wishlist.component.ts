@@ -10,8 +10,8 @@ import { Product } from 'src/app/models/product';
 })
 export class WishlistComponent implements OnInit {
 
-  testProduct1 = new Product(3, "fun mascara", 20, "The bestest most funnest mascara ever!",12.88, "https://m.media-amazon.com/images/I/71e5-Rxbp7L.jpg");
-  testProduct2 = new Product(4, "cool mascara", 20, "The coolest most sickest mascara ever!",12.88, "https://www.sephora.com/productimages/sku/s1143486-main-zoom.jpg");
+  testProduct1 = new Product(3, "fun mascara", 20, "The bestest most funnest mascara ever!",12.88, "https://m.media-amazon.com/images/I/71e5-Rxbp7L.jpg",'maybeline', ['#32323']);
+  testProduct2 = new Product(4, "cool mascara", 20, "The coolest most sickest mascara ever!",12.88, "https://www.sephora.com/productimages/sku/s1143486-main-zoom.jpg", 'maybeline',["#derdsd"]);
 
 
 
