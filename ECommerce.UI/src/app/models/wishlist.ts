@@ -3,11 +3,16 @@ import { WishlistItem } from "./wishlistItem";
 export class Wishlist{
     id:number;
     userId:number;
-    list: WishlistItem[];
+    wishItems: WishlistItem[];
 
-    constructor(Id:number, UserId:number, myWList: WishlistItem[] ){
+    constructor(Id:number, UserId:number ){
         this.id = Id,
         this.userId = UserId,
-        this.list = myWList;
+        this.wishItems = this.listMaker();
+    }
+
+    listMaker(){
+        let newList: WishlistItem[] = []; 
+       return newList; 
     }
 }

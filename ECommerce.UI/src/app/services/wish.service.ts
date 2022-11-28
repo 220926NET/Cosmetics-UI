@@ -23,7 +23,7 @@ export class WishService {
 
   public getWishlist(userId:number):Observable<Wishlist>{
     return this.http.get<Wishlist>(
-      environment.baseUrl + "/Wishlist/userId/" + userId,
+      environment.baseUrl + "/api/Wishlist/userId/" + userId,
       {
         headers: environment.headers,
         withCredentials: environment.withCredentials,
