@@ -20,9 +20,25 @@ export class ProductService {
 
   private productUrl: string = "/api/product";
 
+  /////// testing code //////
+  // product1 : Product = {
+  //   id: 1,
+  //   name: 'p1',
+  //   quantity: 1,
+  //   price: 8.99,
+  //   description: 'string',
+  //   image: 'link of image',
+  // }
+  /////////////////////////////
+
   private _cart = new BehaviorSubject<Cart>({
     cartCount: 0,
-    products: [],
+    products: [] = [
+      /////// testing code //////
+      //{product : this.product1, quantity : 8},
+      //{product : this.product1, quantity : 7}
+      ///////////////////////////
+    ],
     totalPrice: 0.00
   });
 

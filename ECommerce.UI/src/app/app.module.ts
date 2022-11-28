@@ -14,6 +14,8 @@ import { HttpClientModule } from '@angular/common/http';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { ProductPageComponent } from './components/product-page/product-page.component';
 import { ProductReviewComponent } from './components/product-review/product-review.component';
+import { PurchaseSuccessComponent } from './components/purchase-success/purchase-success.component';
+
 
 @NgModule({
   declarations: [
@@ -26,7 +28,9 @@ import { ProductReviewComponent } from './components/product-review/product-revi
     CheckoutComponent,
     DisplayProductsComponent,
     ProductPageComponent,
-    ProductReviewComponent
+    ProductReviewComponent,
+    PurchaseSuccessComponent,
+    
   ],
   imports: [
     BrowserModule,
@@ -35,7 +39,7 @@ import { ProductReviewComponent } from './components/product-review/product-revi
     FormsModule,
     ReactiveFormsModule
   ],
-  providers: [],
+  providers: [CheckoutComponent],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
