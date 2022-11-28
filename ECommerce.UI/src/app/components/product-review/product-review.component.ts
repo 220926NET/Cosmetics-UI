@@ -7,7 +7,7 @@ import { Review } from 'src/app/models/review';
   styleUrls: ['./product-review.component.css']
 })
 export class ProductReviewComponent implements OnInit {
-  @Input() review:Review = new Review(0, 0, 0, 0, '');
+  @Input() review:Review = {} as Review;
   
   constructor() { }
   
