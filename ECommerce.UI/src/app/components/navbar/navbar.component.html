@@ -1,6 +1,9 @@
 <nav class="navbar navbar-light bg-light">
   <h4>Cosmo</h4>
   <form class="form-inline">
+    <button class="btn btn-light" [routerLink]="['/wishlist']">
+      Wishlist
+    </button>
     <button class="btn btn-light" [routerLink]="['/cart']">
       Cart
       <span class="badge badge-info">{{ cartCount }}</span>

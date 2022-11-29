@@ -14,7 +14,7 @@ import { HttpClientModule } from '@angular/common/http';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { WishlistComponent } from './components/wishlist/wishlist.component'
 import { SidebarComponent } from './components/sidebar/sidebar.component';
-import { WishCardComponent } from './wish-card/wish-card.component';
+
 
 @NgModule({
   declarations: [
@@ -28,7 +28,6 @@ import { WishCardComponent } from './wish-card/wish-card.component';
     DisplayProductsComponent,
     WishlistComponent,
     SidebarComponent,
-    WishCardComponent
   ],
   imports: [
     BrowserModule,

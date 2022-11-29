@@ -7,6 +7,9 @@ export class Product {
   description: string;
   imageUrl: string;
   colorHexValues: string[];
+  image?:string;
+  colourName?:string;
+  hexValue?:string;
 
   constructor(
     id: number,
@@ -27,4 +30,6 @@ export class Product {
     this.price = price;
     this.imageUrl = image;
   }
+
+
 }

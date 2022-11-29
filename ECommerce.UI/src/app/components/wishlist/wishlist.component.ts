@@ -3,6 +3,8 @@ import { Wishlist } from 'src/app/models/wishlist';
 import { WishlistItem } from 'src/app/models/wishlistItem';
 import { Product } from 'src/app/models/product';
 import { WishService } from 'src/app/services/wish.service';
+import { ProductService } from 'src/app/services/product.service';
+import { Subscription } from 'rxjs';
 
 @Component({
   selector: 'app-wishlist',
@@ -11,19 +13,32 @@ import { WishService } from 'src/app/services/wish.service';
 })
 export class WishlistComponent implements OnInit {
   pageWishList : Wishlist = new Wishlist(0,0);
+  loggedIn : boolean = false;
+  //cart objects
+  cartCount!: number;
+  products: {
+    product: Product;
+    quantity: number;
+  }[] = [];
+  subscription!: Subscription;
+  totalPrice: number = 0;
   
-  constructor(private wish: WishService) { }
+  constructor(private wish: WishService, private productService: ProductService) { }
   
   ngOnInit(): void {
     var userIdIfLoggedIn = sessionStorage.getItem('userId')
-    if(userIdIfLoggedIn == null){
-      //route to login page
-    }else{
+    if(userIdIfLoggedIn != null){
+      this.loggedIn = true;
       let userIdToInt = parseInt(userIdIfLoggedIn);
       //currently when a user logs in through the login component session storage gets hard coded with a 2
       this.getUsersWishlist(userIdToInt);
-      
     }
+    //This is so that items can be added to cart
+    this.subscription = this.productService.getCart().subscribe((cart) => {
+      this.cartCount = cart.cartCount;
+      this.products = cart.products;
+      this.totalPrice = cart.totalPrice;
+    });
     
   }
   
@@ -32,13 +47,42 @@ export class WishlistComponent implements OnInit {
       this.pageWishList.id = wl.id;
       this.pageWishList.userId = wl.userId;
       this.pageWishList.wishItems = wl.wishItems;
+      console.log(this.pageWishList.wishItems[0]);
     })
   }
-  
-}
 
-// testProduct1 = new Product(3, "fun mascara", 20, "The bestest most funnest mascara ever!",12.88, "https://m.media-amazon.com/images/I/71e5-Rxbp7L.jpg",'maybeline', ['#32323']);
-// testProduct2 = new Product(4, "cool mascara", 20, "The coolest most sickest mascara ever!",12.88, "https://www.sephora.com/productimages/sku/s1143486-main-zoom.jpg", 'maybeline',["#derdsd"]);
-// Item1 = new WishlistItem(1, 1, 3, this.testProduct1);
-// Item2 = new WishlistItem(1,2,4, this.testProduct2); 
-// testWishItems: WishlistItem[] = [];  
+  addToCart(product: Product): void {
+    let inCart = false;
+
+    this.products.forEach((element) => {
+      if (element.product == product) {
+        ++element.quantity;
+        let cart = {
+          cartCount: this.cartCount + 1,
+          products: this.products,
+          totalPrice: this.totalPrice + product.price,
+        };
+        this.productService.setCart(cart);
+        inCart = true;
+        return;
+      }
+    });
+
+    if (inCart == false) {
+      let newProduct = {
+        product: product,
+        quantity: 1,
+      };
+      this.products.push(newProduct);
+      let cart = {
+        cartCount: this.cartCount + 1,
+        products: this.products,
+        totalPrice: this.totalPrice + product.price,
+      };
+      this.productService.setCart(cart);
+    }
+  }
+  ngOnDestroy() {
+    this.subscription.unsubscribe();
+  }
+}

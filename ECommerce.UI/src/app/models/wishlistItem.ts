@@ -1,16 +1,17 @@
-import { Product } from "./product";
+import { WishProduct } from "./wishProduct";
+
 
 export class WishlistItem{
     detailId: number;
     id :number;
     productId:number;
 
-    product: Product;
+    product: WishProduct;
 
-    constructor(dId : number, Id:number, pId:number, p:Product){
+    constructor(dId : number, Id:number, pId:number, wp:WishProduct){
         this.detailId = dId,
         this.id = Id,
         this.productId = pId,
-        this.product = p
+        this.product = wp
     }
 }

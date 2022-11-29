@@ -4,5 +4,26 @@
     height:100%;
 }
 .wishArea{
+    display:flex;
+    flex-direction: column;
+    gap:10px;
+    
+}
+.wishCard{
+    display:flex;
     background-color: rgba(230, 215, 215, 0.5);
+    padding: 5px;
+}
+
+.wishImageArea{
+    flex:1;
+}
+.wishInfo{
+    padding-left: 10px;
+    flex:6;
+}
+
+.notice{
+    display: flex;
+    flex-direction: column;
 }
