@@ -19,7 +19,11 @@ export class ProductPageComponent implements OnInit {
 
   ngOnInit(): void {
     this.reviewService.getByProductId(this.productId, true).subscribe(data => this.reviews = data);
-    this.productService.getSingleProduct(1).subscribe(data => this.product = data);
+    this.productService.getSingleProduct(1).subscribe(data => {
+      console.log("Obtained a product response.");
+      console.log(data);
+      this.product = data;
+    });
     //this.productService.getSingleProduct(1).subscribe(data => console.log("Get product: ", data));
   }
 
