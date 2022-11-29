@@ -5,6 +5,7 @@ import { Product } from 'src/app/models/product';
 import { WishService } from 'src/app/services/wish.service';
 import { ProductService } from 'src/app/services/product.service';
 import { Subscription } from 'rxjs';
+import { WishProduct } from 'src/app/models/wishProduct';
 
 @Component({
   selector: 'app-wishlist',
@@ -34,7 +35,7 @@ export class WishlistComponent implements OnInit {
       this.getUsersWishlist(userIdToInt);
     }
     //This is so that items can be added to cart
-    this.subscription = this.productService.getCart().subscribe((cart) => {
+    this.subscription = this.productService.getWishCart().subscribe((cart) => {
       this.cartCount = cart.cartCount;
       this.products = cart.products;
       this.totalPrice = cart.totalPrice;
@@ -51,7 +52,7 @@ export class WishlistComponent implements OnInit {
     })
   }
 
-  addToCart(product: Product): void {
+  addToWishCart(product: WishProduct): void {
     let inCart = false;
 
     this.products.forEach((element) => {
