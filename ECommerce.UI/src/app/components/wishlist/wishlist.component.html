@@ -1,7 +1,18 @@
-<p>wishlist works!</p>
-<div>
-    <ul>
-        <li *ngFor="let item of pageWishList.wishItems">{{item.product.name}}{{item.product.description}}{{item.product.price}}</li>
+<div class="wishFrame">
+<div class="wishArea" *ngFor="let item of pageWishList.wishItems">
+    <div class="wishCard">
+        <div class="wishImageArea">
 
-    </ul>
+        </div>
+        <div class="wishInfo">
+            {{item.product.name}}
+            {{item.product.colour}}
+            {{item.product.price}}
+
+        </div>
+    </div>
+     
+
+    
+</div>
 </div>

@@ -1,0 +1,8 @@
+.wishFrame{
+    display:flex;
+    justify-content: space-around;
+    height:100%;
+}
+.wishArea{
+    background-color: rgba(230, 215, 215, 0.5);
+}
