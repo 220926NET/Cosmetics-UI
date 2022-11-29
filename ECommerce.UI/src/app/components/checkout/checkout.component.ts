@@ -1,9 +1,12 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Output } from '@angular/core';
 import { Router } from '@angular/router';
 import { Product } from 'src/app/models/product';
 import { ProductService } from 'src/app/services/product.service';
 import { UntypedFormControl, UntypedFormGroup, Validators } from '@angular/forms';
 import { PaymentInfo } from 'src/app/models/paymentInfo';
+import { PaymentInfoServiceService } from 'src/app/services/payment-info-service.service';
+
+
 
 @Component({
   selector: 'app-checkout',
@@ -35,7 +38,7 @@ export class CheckoutComponent implements OnInit {
     //country: new UntypedFormControl('', Validators.required)
   });
 
-  constructor(private productService: ProductService, private router: Router) { }
+  constructor(private productService: ProductService, private router: Router, private paymentInfoService:PaymentInfoServiceService) { }
 
   ngOnInit(): void {
     this.productService.getCart().subscribe(
@@ -61,6 +64,7 @@ export class CheckoutComponent implements OnInit {
 
   //payment infor object
   paymentInfo! : PaymentInfo;
+    
 
   onSubmit(): void {
     this.products.forEach(
@@ -73,11 +77,21 @@ export class CheckoutComponent implements OnInit {
     );
     
      //store payment infor to object
-     this.paymentInfo.cardName = this.checkoutForm.controls['cardName'].value;
-     this.paymentInfo.detail = this.checkoutForm.controls['detail'].value;
-     this.paymentInfo.city = this.checkoutForm.controls['city'].value;
-     this.paymentInfo.state = this.checkoutForm.controls['state'].value;
-     this.paymentInfo.zipCode = this.checkoutForm.controls['zipCode'].value;
+     
+     this.paymentInfo = {
+      cardName : this.checkoutForm.controls['cardName'].value,
+      detail : this.checkoutForm.controls['detail'].value,
+      city : this.checkoutForm.controls['city'].value,
+      state : this.checkoutForm.controls['state'].value,
+      zipCode : this.checkoutForm.controls['zipCode'].value
+    };
+
+    
+    //  this.paymentInfo.cardName = this.checkoutForm.controls['cardName'].value;
+    //  this.paymentInfo.detail = this.checkoutForm.controls['detail'].value;
+    //  this.paymentInfo.city = this.checkoutForm.controls['city'].value;
+    //  this.paymentInfo.state = this.checkoutForm.controls['state'].value;
+    //  this.paymentInfo.zipCode = this.checkoutForm.controls['zipCode'].value;
      ///
     
     if(this.finalProducts.length > 0) {
@@ -98,6 +112,11 @@ export class CheckoutComponent implements OnInit {
     } else {
       this.router.navigate(['/purchase-success']);
     }
+
+    this.paymentInfoService.savePaymentInfo(this.paymentInfo)
   }
+
+
+
 
 }
