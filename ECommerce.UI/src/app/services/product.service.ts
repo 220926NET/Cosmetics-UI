@@ -4,7 +4,6 @@ import { BehaviorSubject, Observable } from 'rxjs';
 import { Product } from '../models/product';
 import { environment } from 'src/environments/environment';
 import { ProductDetails } from '../models/ProductDetails/ProductDetails';
-import { WishProduct } from '../models/wishProduct';
 
 interface Cart {
   cartCount: number;
@@ -15,14 +14,6 @@ interface Cart {
   totalPrice: number;
 }
 
-interface WishCart {
-  cartCount: number;
-  products: {
-    product: WishProduct;
-    quantity: number;
-  }[];
-  totalPrice: number;
-}
 
 @Injectable({
   providedIn: 'root',
@@ -44,23 +35,6 @@ export class ProductService {
 
   setCart(latestValue: Cart) {
     return this._cart.next(latestValue);
-  }
-
-  //same as above just with wish cart
-  private _wishcart = new BehaviorSubject<WishCart>({
-    cartCount: 0,
-    products: [],
-    totalPrice: 0.0,
-  });
-
-  private _wishcart$ = this._wishcart.asObservable();
-
-  getWishCart(): Observable<WishCart> {
-    return this._wishcart$;
-  }
-
-  setWishCart(latestValue: WishCart) {
-    return this._wishcart.next(latestValue);
   }
 
   constructor(private http: HttpClient) {}

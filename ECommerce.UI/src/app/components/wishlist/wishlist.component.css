@@ -22,6 +22,10 @@
     padding-left: 10px;
     flex:6;
 }
+.wishButtonArea{
+    display:flex;
+    justify-content: space-between;
+}
 
 .notice{
     display: flex;

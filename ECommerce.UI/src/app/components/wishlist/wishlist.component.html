@@ -5,15 +5,20 @@
         </div>
         <div class="wishCard" *ngFor="let item of pageWishList.wishItems">
             <div class="wishImageArea">
-                <img [src]="item.product.name" alt="make-up product" height="150px" />
+                <img [src]="item.product.image" alt="make-up product" height="150px" />
             </div>
             <div class="wishInfo">
                 <p>{{item.product.name}}</p>
                 
                 <p>{{item.product.price}}</p>
-                <button class="btn btn-outline-success" (click)="addToWishCart(item.product)">
-                    Add to Cart
-                </button>
+                <div class="wishButtonArea">
+                    <button class="btn btn-outline-success" (click)="addToWishCart(item.product)">
+                        Add to Cart
+                    </button>
+                    <button class="btn btn-outline-danger" (click)="removeItemFromWishList(item.detailId)">
+                        Remove
+                    </button>
+                </div>
             </div>
         </div>
     </div>

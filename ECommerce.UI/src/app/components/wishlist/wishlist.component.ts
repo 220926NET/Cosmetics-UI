@@ -1,11 +1,10 @@
 import { Component, OnInit } from '@angular/core';
 import { Wishlist } from 'src/app/models/wishlist';
 import { WishlistItem } from 'src/app/models/wishlistItem';
-import { Product } from 'src/app/models/product';
 import { WishService } from 'src/app/services/wish.service';
 import { ProductService } from 'src/app/services/product.service';
 import { Subscription } from 'rxjs';
-import { WishProduct } from 'src/app/models/wishProduct';
+import { Product } from 'src/app/models/product';
 
 @Component({
   selector: 'app-wishlist',
@@ -35,7 +34,7 @@ export class WishlistComponent implements OnInit {
       this.getUsersWishlist(userIdToInt);
     }
     //This is so that items can be added to cart
-    this.subscription = this.productService.getWishCart().subscribe((cart) => {
+    this.subscription = this.productService.getCart().subscribe((cart) => {
       this.cartCount = cart.cartCount;
       this.products = cart.products;
       this.totalPrice = cart.totalPrice;
@@ -48,11 +47,10 @@ export class WishlistComponent implements OnInit {
       this.pageWishList.id = wl.id;
       this.pageWishList.userId = wl.userId;
       this.pageWishList.wishItems = wl.wishItems;
-      console.log(this.pageWishList.wishItems[0]);
     })
   }
 
-  addToWishCart(product: WishProduct): void {
+  addToWishCart(product: Product): void {
     let inCart = false;
 
     this.products.forEach((element) => {
@@ -85,5 +83,17 @@ export class WishlistComponent implements OnInit {
   }
   ngOnDestroy() {
     this.subscription.unsubscribe();
+  }
+
+  removeItemFromWishList(dId : number){
+    this.wish.deleteFromWishlist(dId).subscribe(()=>{
+      //reload wishlist to reflect change
+      var userIdIfLoggedIn = sessionStorage.getItem('userId')
+      if(userIdIfLoggedIn != null){
+        let userIdToInt = parseInt(userIdIfLoggedIn);
+        this.getUsersWishlist(userIdToInt);
+      }
+
+    });
   }
 }
