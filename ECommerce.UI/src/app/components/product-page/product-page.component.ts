@@ -3,6 +3,7 @@ import { Review } from 'src/app/models/review';
 import { ProductService } from 'src/app/services/product.service';
 import { ReviewService } from 'src/app/services/review.service';
 import { Product } from 'src/app/models/product';
+import { ActivatedRoute } from '@angular/router'
 
 @Component({
   selector: 'app-product-page',
@@ -11,20 +12,25 @@ import { Product } from 'src/app/models/product';
 })
 export class ProductPageComponent implements OnInit {
 
-  @Input() productId:number = 1;
+  productId:number = 0;
   product:Product = {} as Product;
 
   reviews:Review[] = [];
-  constructor(private reviewService:ReviewService, private productService:ProductService) { }
+  constructor(
+    private reviewService:ReviewService, 
+    private productService:ProductService,
+    private route: ActivatedRoute
+    ) { }
 
   ngOnInit(): void {
-    this.reviewService.getByProductId(this.productId, true).subscribe(data => this.reviews = data);
-    this.productService.getSingleProduct(1).subscribe(data => {
-      console.log("Obtained a product response.");
-      console.log(data);
-      this.product = data;
-    });
-    //this.productService.getSingleProduct(1).subscribe(data => console.log("Get product: ", data));
-  }
+    let idString:string|null = this.route.snapshot.paramMap.get('id');
+    this.productId = parseInt(idString ? idString: '0');
 
+    this.reviewService.getByProductId(this.productId, true).subscribe(data => this.reviews = data);
+    this.productService.getSingleProduct(this.productId).subscribe(data => {
+      this.product = data; 
+      // Remove '\n' found in the product description
+      this.product.description = this.product.description.replace(/\\n/g,' ');
+    });
+  }
 }
