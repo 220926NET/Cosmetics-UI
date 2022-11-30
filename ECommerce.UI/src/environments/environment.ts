@@ -5,14 +5,12 @@
 export const environment = {
   production: false,
   withCredentials: true,
-  baseUrl: "https://localhost:7078",
+  baseUrl: 'https://localhost:7078',
   headers: {
     'Content-Type': 'application/json',
     'Access-Control-Allow-Origin': 'http://localhost:4200',
   },
 };
-
-
 
 /*
  * For easier debugging in development mode, you can import the following file

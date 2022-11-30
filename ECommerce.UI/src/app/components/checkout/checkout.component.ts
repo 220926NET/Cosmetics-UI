@@ -110,13 +110,11 @@ export class CheckoutComponent implements OnInit {
       );
 
     } else {
-      this.router.navigate(['/purchase-success']);
+      alert("You have nothing to purchase");
+      //this.router.navigate(['/purchase-success']);
     }
 
     this.paymentInfoService.savePaymentInfo(this.paymentInfo)
   }
-
-
-
 
 }

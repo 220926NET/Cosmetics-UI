@@ -1,6 +1,5 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
-
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { LoginComponent } from './components/login/login.component';
@@ -15,7 +14,7 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { ProductPageComponent } from './components/product-page/product-page.component';
 import { ProductReviewComponent } from './components/product-review/product-review.component';
 import { PurchaseSuccessComponent } from './components/purchase-success/purchase-success.component';
-
+import { SidebarComponent } from './components/sidebar/sidebar.component';
 
 @NgModule({
   declarations: [
@@ -30,16 +29,16 @@ import { PurchaseSuccessComponent } from './components/purchase-success/purchase
     ProductPageComponent,
     ProductReviewComponent,
     PurchaseSuccessComponent,
-    
+    SidebarComponent,
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     HttpClientModule,
     FormsModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
   ],
   providers: [CheckoutComponent],
   bootstrap: [AppComponent]
 })
-export class AppModule { }
+export class AppModule {}

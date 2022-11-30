@@ -1,4 +1,5 @@
-export class Product {
+export class ProductDetails
+{
   id: number;
   name: string;
   brand: string;
@@ -17,7 +18,8 @@ export class Product {
     image: string,
     brand: string,
     colorHexValues: string[]
-  ) {
+  )
+  {
     this.brand = brand;
     this.colorHexValues = colorHexValues;
     this.id = id;

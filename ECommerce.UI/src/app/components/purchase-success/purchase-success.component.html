@@ -1,5 +1,23 @@
 <app-navbar></app-navbar>
-<p>purchase-success works!</p>
-<p>payment detail</p>
-<p>{{paymentInfo | json}}</p>
-<button (click)="show()">show</button>
+<h1>Purchase success!</h1>
+<br>
+<div>
+    <h4>BILLING ADDRESS</h4>
+    <table>
+        <tr>
+            <td>Name: {{paymentInfo.cardName}}</td>
+        </tr>
+        <tr>
+            <td>Street: {{paymentInfo.detail}}</td>
+        </tr>
+        <tr>
+            <td>City: {{paymentInfo.city}}</td>
+        </tr>
+        <tr>
+            <td>State: {{paymentInfo.state}}</td>
+        </tr>
+        <tr>
+            <td>ZipCode: {{paymentInfo.zipCode}}</td>
+        </tr>
+    </table>
+</div>

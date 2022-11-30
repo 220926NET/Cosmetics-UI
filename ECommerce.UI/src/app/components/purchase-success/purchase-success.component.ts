@@ -15,13 +15,9 @@ export class PurchaseSuccessComponent implements OnInit {
 
 
   ngOnInit(): void {
+      this.paymentInfo = this.paymentInfoService.showPaymentInfo();
   }
 
   paymentInfo! : PaymentInfo;
-
-  show(){
-    this.paymentInfo = this.paymentInfoService.showPaymentInfo();
-    console.log(this.paymentInfo)
-  }
 
 }
