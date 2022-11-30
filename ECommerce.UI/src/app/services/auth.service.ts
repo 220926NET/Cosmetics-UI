@@ -8,14 +8,14 @@ import { environment } from 'src/environments/environment';
 })
 export class AuthService {
 
-  authUrl: string = `${environment.baseUrl}/auth`;
+  authUrl: string = `${environment.baseUrl}/Auth`;
   loggedIn: boolean = false;
 
   constructor(private http: HttpClient) { }
 
   login(email: string, password: string): Observable<any> {
     const payload = {email:email, password:password};
-    return this.http.post<any>(`${this.authUrl}/login`, payload, {headers: environment.headers, withCredentials: environment.withCredentials});
+    return this.http.post<any>(`${this.authUrl}/Login`, payload, {headers: environment.headers, withCredentials: environment.withCredentials});
   }
 
   logout(): void{
@@ -24,6 +24,6 @@ export class AuthService {
 
   register(firstName: string, lastName: string, email: string, password: string): Observable<any> {
     const payload = {firstName: firstName, lastName: lastName, email: email, password: password};
-    return this.http.post<any>(`${this.authUrl}/register`, payload, {headers: environment.headers});
+    return this.http.post<any>(`${this.authUrl}/Register`, payload, {headers: environment.headers});
   }
 }
