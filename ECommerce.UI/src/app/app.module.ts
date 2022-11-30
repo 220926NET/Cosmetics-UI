@@ -14,6 +14,7 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { ProductPageComponent } from './components/product-page/product-page.component';
 import { ProductReviewComponent } from './components/product-review/product-review.component';
 import { PurchaseSuccessComponent } from './components/purchase-success/purchase-success.component';
+import { WishlistComponent } from './components/wishlist/wishlist.component'
 import { SidebarComponent } from './components/sidebar/sidebar.component';
 
 @NgModule({
@@ -29,7 +30,8 @@ import { SidebarComponent } from './components/sidebar/sidebar.component';
     ProductPageComponent,
     ProductReviewComponent,
     PurchaseSuccessComponent,
-    SidebarComponent,
+    WishlistComponent,
+    SidebarComponent
   ],
   imports: [
     BrowserModule,

@@ -29,6 +29,8 @@ export class LoginComponent implements OnInit {
       (err) => console.log(err),
       () => this.router.navigate(['home'])
     );
+    //code added by Rushay for Wishlist
+    sessionStorage.setItem("userId", `${2}`);
   }
 
   register(): void {

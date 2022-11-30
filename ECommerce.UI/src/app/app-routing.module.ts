@@ -7,8 +7,7 @@ import { LoginComponent } from './components/login/login.component';
 import { ProductPageComponent } from './components/product-page/product-page.component';
 import { RegisterComponent } from './components/register/register.component';
 import { PurchaseSuccessComponent } from './components/purchase-success/purchase-success.component';
-
-
+import { WishlistComponent } from './components/wishlist/wishlist.component';
 
 const routes: Routes = [
 
@@ -21,7 +20,8 @@ const routes: Routes = [
   { path: "checkout", component: CheckoutComponent },
   { path: "product", component: ProductPageComponent },
   { path: "purchase-success", component: PurchaseSuccessComponent},
-  { path: "product/:id", component: ProductPageComponent }
+  { path: "product/:id", component: ProductPageComponent },
+  { path: "wishlist", component: WishlistComponent}
 ];
 
 @NgModule({
