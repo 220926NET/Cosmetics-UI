@@ -20,8 +20,8 @@ const routes: Routes = [
   { path: "cart", component: CartComponent },
   { path: "checkout", component: CheckoutComponent },
   { path: "product", component: ProductPageComponent },
-  { path: "purchase-success", component: PurchaseSuccessComponent}
-
+  { path: "purchase-success", component: PurchaseSuccessComponent},
+  { path: "product/:id", component: ProductPageComponent }
 ];
 
 @NgModule({

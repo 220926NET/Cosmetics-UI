@@ -13,7 +13,10 @@ import { HttpClientModule } from '@angular/common/http';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { ProductPageComponent } from './components/product-page/product-page.component';
 import { ProductReviewComponent } from './components/product-review/product-review.component';
+<<<<<<< HEAD
 import { PurchaseSuccessComponent } from './components/purchase-success/purchase-success.component';
+=======
+>>>>>>> 1243f7d9fbe75ae6b345eefbb8e3276c78392eeb
 import { SidebarComponent } from './components/sidebar/sidebar.component';
 
 @NgModule({

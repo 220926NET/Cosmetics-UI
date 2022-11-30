@@ -6,7 +6,7 @@ export class ProductDetails
   quantity: number;
   price: number;
   description: string;
-  imageUrl: string;
+  image: string;
   colorHexValues: string[];
 
   constructor(
@@ -27,6 +27,6 @@ export class ProductDetails
     this.quantity = quantity;
     this.description = description;
     this.price = price;
-    this.imageUrl = image;
+    this.image = image;
   }
 }
