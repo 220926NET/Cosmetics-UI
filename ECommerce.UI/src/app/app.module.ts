@@ -13,6 +13,8 @@ import { DisplayProductsComponent } from './components/display-products/display-
 import { HttpClientModule } from '@angular/common/http';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { WishlistComponent } from './components/wishlist/wishlist.component'
+import { ProductPageComponent } from './components/product-page/product-page.component';
+import { ProductReviewComponent } from './components/product-review/product-review.component';
 import { SidebarComponent } from './components/sidebar/sidebar.component';
 
 
@@ -28,6 +30,9 @@ import { SidebarComponent } from './components/sidebar/sidebar.component';
     DisplayProductsComponent,
     WishlistComponent,
     SidebarComponent,
+    ProductPageComponent,
+    ProductReviewComponent,
+    SidebarComponent
   ],
   imports: [
     BrowserModule,

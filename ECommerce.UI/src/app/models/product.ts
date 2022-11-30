@@ -5,9 +5,8 @@ export class Product {
   quantity: number;
   price: number;
   description: string;
-  imageUrl: string;
+  image: string;
   colorHexValues: string[];
-  image?:string;
   colourName?:string;
   hexValue?:string;
 
@@ -28,7 +27,7 @@ export class Product {
     this.quantity = quantity;
     this.description = description;
     this.price = price;
-    this.imageUrl = image;
+    this.image = image;
   }
 
 
