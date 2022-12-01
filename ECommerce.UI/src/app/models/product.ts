@@ -5,8 +5,11 @@ export class Product {
   quantity: number;
   price: number;
   description: string;
-  imageUrl: string;
+  image: string;
   colorHexValues: string[];
+  colourName?:string;
+  hexValue?:string;
+  
 
   constructor(
     id: number,
@@ -16,15 +19,21 @@ export class Product {
     price: number,
     image: string,
     brand: string,
-    colorHexValues: string[]
+    colorHexValues: string[],
+    colour:string,
+    hex:string
   ) {
-    this.brand = brand;
-    this.colorHexValues = colorHexValues;
     this.id = id;
     this.name = name;
     this.quantity = quantity;
     this.description = description;
     this.price = price;
-    this.imageUrl = image;
+    this.image = image;
+    this.brand = brand;
+    this.colorHexValues = colorHexValues;
+    this.colourName = colour;
+    this.hexValue = hex;
   }
+
+
 }

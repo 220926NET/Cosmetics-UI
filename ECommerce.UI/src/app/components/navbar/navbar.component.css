@@ -1,0 +1,7 @@
+.cosmo-title {
+    cursor: pointer;
+}
+
+.cosmo-title:hover{
+    scale: 1.2;
+}

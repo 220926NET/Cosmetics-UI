@@ -1,5 +1,5 @@
 <div class="card" style="width: 18rem">
-  <img class="card-img-top" [src]="productInfo.imageUrl" alt="Card image cap" />
+  <img class="card-img-top" [src]="productInfo.image" alt="Card image cap" />
   <div class="card-body">
     <h5 class="card-title">{{ productInfo.name }}</h5>
     <!-- <p class="card-text">{{ productInfo.description }}</p> -->
@@ -17,7 +17,7 @@
       disabled
     />
   </div>
-  <div class="input-group input-group-sm mb-3">
+  <!-- <div class="input-group input-group-sm mb-3">
     <div class="input-group-prepend">
       <span class="input-group-text" id="inputGroup-sizing-sm"
         >Quantity in Stock</span
@@ -36,5 +36,5 @@
     <button class="btn btn-outline-success" (click)="addToCart(productInfo)">
       Add to Cart
     </button>
-  </div>
+  </div> -->
 </div>

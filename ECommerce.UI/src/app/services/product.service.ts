@@ -14,6 +14,7 @@ interface Cart {
   totalPrice: number;
 }
 
+
 @Injectable({
   providedIn: 'root',
 })
@@ -49,7 +50,7 @@ export class ProductService {
   }
 
   public getSingleProduct(id: number): Observable<Product> {
-    return this.http.get<Product>(environment.baseUrl + id);
+    return this.http.get<Product>(environment.baseUrl + this.productUrl + 'id/' + id.toString());
   }
 
   public purchase(

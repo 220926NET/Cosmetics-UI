@@ -1,0 +1,36 @@
+<div class="wishFrame">
+    <div class="wishArea" *ngIf="loggedIn; else pleaseLogIn">
+        <div class="wishBanner">
+            <h1>User's Wishlist</h1>
+        </div>
+        <div class="wishCard" *ngFor="let item of pageWishList.wishItems">
+            <div class="wishImageArea">
+                <img [src]="item.product.image" alt="make-up product" height="150px" />
+            </div>
+            <div class="wishInfo">
+                <p>{{item.product.name}}</p>
+                
+                <p>{{item.product.price}}</p>
+                <div class="wishButtonArea">
+                    <button class="btn btn-outline-success" (click)="addToWishCart(item.product)">
+                        Add to Cart
+                    </button>
+                    <button class="btn btn-outline-danger" (click)="removeItemFromWishList(item.detailId)">
+                        Remove
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+    <ng-template #pleaseLogIn>
+        <div class="notice">
+            <p> Log in to view your wish list</p>
+            <button class="btn btn-light" [routerLink]="['/login']">
+                Go to login page
+            </button>
+        </div>
+    </ng-template>
+</div>
+<!-- https://d3t32hsnjxo7q6.cloudfront.net/i/c2ddacc79f4fdd3d23664581c76546bc_ra,w158,h184_pa,w158,h184.png -->
+
+
