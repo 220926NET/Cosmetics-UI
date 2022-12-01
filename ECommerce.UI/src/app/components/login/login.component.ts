@@ -23,10 +23,13 @@ export class LoginComponent implements OnInit {
   
   onSubmit(): void {
     this.authService.login(this.loginForm.get('email')?.value, this.loginForm.get('password')?.value).subscribe(
+      (res) => {
+        sessionStorage.setItem("ID", res['id'])
+      },
       () => {
         this.authService.loggedIn=true;
       },
-      (err) => console.log(err),
+      //(err) => console.log(err),
       () => this.router.navigate(['home'])
     );
     //code added by Rushay for Wishlist
