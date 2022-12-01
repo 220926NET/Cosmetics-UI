@@ -1,3 +1,18 @@
+
+.logoArea{
+    display:flex;
+    gap:10px;
+    color:white;
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    align-items: center;
+}
+#navLogo{
+    width:40px;
+    height:40px;
+}
+.navbar{
+    background-color: black;
+}
 .cosmo-title {
     cursor: pointer;
 }
