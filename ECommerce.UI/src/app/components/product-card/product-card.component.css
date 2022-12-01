@@ -20,6 +20,11 @@ div {
   position: relative;
   transition: 0.2s ease-out;
 }
+.input-group-sm  {
+  padding: 10px; 
+}
+
+
 
 .card:hover {
   box-shadow: 0 5px 10px rgba(0, 0, 0, 0.2);
