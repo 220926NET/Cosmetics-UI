@@ -1,5 +1,6 @@
 export class Product {
   id: number;
+  apiId?:number;
   name: string;
   brand: string;
   quantity: number;
@@ -13,6 +14,7 @@ export class Product {
 
   constructor(
     id: number,
+    APIId:number,
     name: string,
     quantity: number,
     description: string,
@@ -21,9 +23,10 @@ export class Product {
     brand: string,
     colorHexValues: string[],
     colour:string,
-    hex:string
+    // hex:string
   ) {
     this.id = id;
+    this.apiId = APIId;
     this.name = name;
     this.quantity = quantity;
     this.description = description;
@@ -32,7 +35,7 @@ export class Product {
     this.brand = brand;
     this.colorHexValues = colorHexValues;
     this.colourName = colour;
-    this.hexValue = hex;
+    // this.hexValue = hex;
   }
 
 

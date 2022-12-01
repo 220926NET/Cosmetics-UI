@@ -9,6 +9,8 @@ import { ProductService } from 'src/app/services/product.service';
   styleUrls: ['./product-card.component.css'],
 })
 export class ProductCardComponent implements OnInit {
+ 
+
   cartCount!: number;
 
   products: {
@@ -28,6 +30,7 @@ export class ProductCardComponent implements OnInit {
       this.cartCount = cart.cartCount;
       this.products = cart.products;
       this.totalPrice = cart.totalPrice;
+      
     });
   }
 

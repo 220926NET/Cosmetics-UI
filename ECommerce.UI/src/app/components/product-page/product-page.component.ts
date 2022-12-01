@@ -12,8 +12,8 @@ import { ActivatedRoute } from '@angular/router'
 })
 export class ProductPageComponent implements OnInit {
 
-  productId:number = 0;
-  product:Product = {} as Product;
+  apiId:number = 0;
+  products:Product[]= [];
 
   reviews:Review[] = [];
   constructor(
@@ -24,13 +24,17 @@ export class ProductPageComponent implements OnInit {
 
   ngOnInit(): void {
     let idString:string|null = this.route.snapshot.paramMap.get('id');
-    this.productId = parseInt(idString ? idString: '0');
+    this.apiId = parseInt(idString ? idString: '0');
 
-    this.reviewService.getByProductId(this.productId, true).subscribe(data => this.reviews = data);
-    this.productService.getSingleProduct(this.productId).subscribe(data => {
-      this.product = data; 
+    
+    this.productService.getProductsWithSameAPIId(this.apiId).subscribe(data => {
+      this.products = data; 
       // Remove '\n' found in the product description
-      this.product.description = this.product.description.replace(/\\n/g,' ');
+      this.products[0].description = this.products[0].description.replace(/\\n/g,' ');
+      console.log(this.products[0]);
     });
+    this.reviewService.getByProductId(this.products[0].id, true).subscribe(data => this.reviews = data);
+    //do after product is loaded
+    
   }
 }
