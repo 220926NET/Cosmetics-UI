@@ -16,6 +16,7 @@ import { WishlistComponent } from './components/wishlist/wishlist.component'
 import { ProductPageComponent } from './components/product-page/product-page.component';
 import { ProductReviewComponent } from './components/product-review/product-review.component';
 import { SidebarComponent } from './components/sidebar/sidebar.component';
+import { FooterComponent } from './components/footer/footer.component';
 
 
 @NgModule({
@@ -32,7 +33,8 @@ import { SidebarComponent } from './components/sidebar/sidebar.component';
     SidebarComponent,
     ProductPageComponent,
     ProductReviewComponent,
-    SidebarComponent
+    SidebarComponent,
+    FooterComponent
   ],
   imports: [
     BrowserModule,
