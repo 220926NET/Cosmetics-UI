@@ -53,6 +53,16 @@ export class ProductService {
     return this.http.get<Product>(environment.baseUrl + this.productUrl + 'id/' + id.toString());
   }
 
+  public getProductsWithSameAPIId(apiId:number): Observable<Product[]> {
+    return this.http.get<Product[]>(
+      environment.baseUrl + this.productUrl + "apiId/" + apiId,
+      {
+        headers: environment.headers,
+        withCredentials: environment.withCredentials,
+      }
+    );
+  }
+
   public purchase(
     products: { id: number; quantity: number }[]
   ): Observable<any> {

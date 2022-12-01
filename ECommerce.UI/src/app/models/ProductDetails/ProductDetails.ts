@@ -1,6 +1,7 @@
 export class ProductDetails
 {
   id: number;
+  apiId?:number;
   name: string;
   brand: string;
   quantity: number;
