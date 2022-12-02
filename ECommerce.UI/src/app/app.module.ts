@@ -1,6 +1,5 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
-
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { LoginComponent } from './components/login/login.component';
@@ -45,7 +44,7 @@ import { PurchaseSuccessComponent } from './components/purchase-success/purchase
     FormsModule,
     ReactiveFormsModule,
   ],
-  providers: [],
-  bootstrap: [AppComponent],
+  providers: [CheckoutComponent],
+  bootstrap: [AppComponent]
 })
 export class AppModule {}

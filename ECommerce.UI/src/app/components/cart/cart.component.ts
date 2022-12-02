@@ -10,6 +10,8 @@ import { ProductService } from 'src/app/services/product.service';
 })
 export class CartComponent implements OnInit {
 
+
+  //productDTO list for calling purchase HTTP request 
   products: {
     product: Product,
     quantity: number
@@ -17,16 +19,19 @@ export class CartComponent implements OnInit {
   totalPrice!: number;
   cartProducts: Product[] = [];
 
-  constructor(private productService: ProductService, private router: Router) { }
+  
+
+  constructor(private productService: ProductService, private router: Router) {}
 
   ngOnInit(): void {
     this.productService.getCart().subscribe(
       (cart) => {
         this.products = cart.products;
         this.products.forEach(
-          (element) => this.cartProducts.push(element.product)
+          (element) => {this.cartProducts.push(element.product)}
         );
         this.totalPrice = cart.totalPrice;
+        console.log(cart.products)
       }
     );
   }

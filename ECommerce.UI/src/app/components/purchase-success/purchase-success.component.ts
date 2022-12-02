@@ -1,4 +1,8 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, Input, OnInit } from '@angular/core';
+import { CheckoutComponent } from '../checkout/checkout.component';
+import { PaymentInfo } from 'src/app/models/paymentInfo';
+import { PaymentInfoServiceService } from 'src/app/services/payment-info-service.service';
+
 
 @Component({
   selector: 'app-purchase-success',
@@ -7,9 +11,13 @@ import { Component, OnInit } from '@angular/core';
 })
 export class PurchaseSuccessComponent implements OnInit {
 
-  constructor() { }
+  constructor(public checkout: CheckoutComponent, private paymentInfoService:PaymentInfoServiceService) { }
+
 
   ngOnInit(): void {
+      this.paymentInfo = this.paymentInfoService.showPaymentInfo();
   }
+
+  paymentInfo! : PaymentInfo;
 
 }

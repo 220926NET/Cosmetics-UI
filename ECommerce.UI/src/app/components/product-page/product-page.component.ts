@@ -15,6 +15,8 @@ export class ProductPageComponent implements OnInit {
   apiId:number = 0;
   products:Product[] = [];
 
+  
+
   reviews:Review[] = [];
   constructor(
     private reviewService:ReviewService, 
@@ -26,6 +28,8 @@ export class ProductPageComponent implements OnInit {
     let idString:string|null = this.route.snapshot.paramMap.get('apiid');
     this.apiId = parseInt(idString ? idString: '0');
 
+    //checking products
+    console.log(this.products);
     
     this.productService.getProductsWithSameAPIId(this.apiId).subscribe(data => {
       this.products = data; 
@@ -37,5 +41,15 @@ export class ProductPageComponent implements OnInit {
     
     //do after product is loaded
     
+
+  }
+
+  //need select specific product and its quantity
+
+  
+
+  //call addtocart function
+  public AddToCart(){
+    this.productService.AddtoCartService( {product : this.products[0], quantity:1})
   }
 }
