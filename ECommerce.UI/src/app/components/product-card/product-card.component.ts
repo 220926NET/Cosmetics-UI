@@ -25,12 +25,11 @@ export class ProductCardComponent implements OnInit {
   constructor(private productService: ProductService) {}
 
   ngOnInit(): void {
-    console.log('product info is ' + this.productInfo);
+    //console.log('product info is ' + JSON.stringify(this.productInfo));
     this.subscription = this.productService.getCart().subscribe((cart) => {
       this.cartCount = cart.cartCount;
       this.products = cart.products;
       this.totalPrice = cart.totalPrice;
-      
     });
   }
 

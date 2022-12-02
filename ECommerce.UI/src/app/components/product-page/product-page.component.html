@@ -1,6 +1,7 @@
 <div class="container">
     <div class="row">
         <div class="col border"><img [src]="products[0].image"></div>
+        
         <div class="col">
             <div class="row">
                 <div class="col border"><span>Buy Options</span></div>
@@ -9,7 +10,9 @@
                 <div class="col border">
                     <span>Details</span>
                     <p>
+                        
                         {{products[0].description}}
+                        
                     </p>
                 </div>
             </div>
@@ -21,8 +24,12 @@
                 Reviews
             </p>
             <div>
+                
                 <app-product-review *ngFor="let review of reviews" [review]="review" class="m-4"></app-product-review>
+                
             </div>
+            
+            <app-product-review-form></app-product-review-form>
             
         </div>
     </div>

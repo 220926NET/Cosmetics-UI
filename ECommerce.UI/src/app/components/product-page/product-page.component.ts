@@ -20,15 +20,19 @@ export class ProductPageComponent implements OnInit {
     private reviewService:ReviewService, 
     private productService:ProductService,
     private route: ActivatedRoute
-    ) { }
+    ) { console.log('inside a product page!') }
 
   ngOnInit(): void {
+    
+    console.log('inside ngInit!')
     let idString:string|null = this.route.snapshot.paramMap.get('id');
     this.apiId = parseInt(idString ? idString: '0');
+    console.log(`Got apiId of ${this.apiId}`);
 
     
     this.productService.getProductsWithSameAPIId(this.apiId).subscribe(data => {
       this.products = data; 
+      console.log(`Got the following data ${JSON.stringify(data)}`);
       // Remove '\n' found in the product description
       this.products[0].description = this.products[0].description.replace(/\\n/g,' ');
       console.log(this.products[0]);

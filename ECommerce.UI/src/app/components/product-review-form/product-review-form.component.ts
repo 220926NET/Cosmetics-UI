@@ -7,9 +7,16 @@ import { Component, OnInit } from '@angular/core';
 })
 export class ProductReviewFormComponent implements OnInit {
 
+  isLeavingReview:boolean = false;
+
   constructor() { }
 
   ngOnInit(): void {
+  }
+
+  leaveReview() {
+    alert('!')
+    this.isLeavingReview=true;
   }
 
 }
