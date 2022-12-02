@@ -6,6 +6,8 @@
   padding: 10px;
   gap: 2px;
   background-color: black;
+  border-top: 2px solid rgb(66, 64, 64);
+  border-bottom: 2px solid rgb(66, 64, 64);
 }
 
 .sidebar-product {
