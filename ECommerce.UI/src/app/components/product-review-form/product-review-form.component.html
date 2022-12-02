@@ -3,7 +3,7 @@
 
 
   <div  *ngIf="!isLeavingReview">
-      <button (click)="leaveReview()">Leave a Review</button>
+      <button (click)="leaveReview()" class="btn btn-secondary mx-2">Leave a Review</button>
   </div>
 
   <form *ngIf="isLeavingReview" class="p-4"> 
@@ -35,7 +35,8 @@
           <textarea class="form-control" id="review-text" rows="3"></textarea>
       </div>
       <div class="form-group">
-        <button class="btn btn-primary" type="submit">Submit form</button>
+        <button class="btn btn-primary mx-2" type="submit">Submit form</button>
+        <button class="btn btn-secondary mx-2" (click)="cancelLeaveReview()">Cancel</button>
       </div>
   </form>
 </div>

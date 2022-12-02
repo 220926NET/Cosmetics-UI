@@ -18,4 +18,8 @@ export class ProductReviewFormComponent implements OnInit {
     this.isLeavingReview=true;
   }
 
+  cancelLeaveReview() {
+    this.isLeavingReview=false;
+  }
+
 }
