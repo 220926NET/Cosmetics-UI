@@ -1,11 +1,14 @@
 /* Item sizing */
+.display-frame{
+  display:flex;
+}
 
 .sidebar {
   width: 15%;
   float: left;
 }
 
-.btn-prev {
+/* .btn-prev {
   margin-top: 500px;
   display: block;
   float: left;
@@ -17,6 +20,12 @@
   float: right;
   margin-top: 500px;
   margin-right: 23%;
+  font-size: 50px;
+} */
+.btn-next{
+  font-size: 50px;
+}
+.btn-prev{
   font-size: 50px;
 }
 .cardListItem {
@@ -35,6 +44,7 @@
   bottom: 100px;
   left: 50%;
 }
+
 /* small size viewport */
 @media screen and (max-width: 640px) {
   /* Item sizing */
@@ -67,6 +77,28 @@
 
 .container {
   margin-top: 1%;
+  display: flex;
+  flex-direction: column;
+  
+}
+
+#cardsAndPageNum{
+  display: flex;
+  flex-direction: column;
+}
+
+.cardsAndNextPageButton{
+  display:flex;
+}
+.triangle{
+  align-self: center;
+  
+}
+
+.noSpanPage{
+  margin-top:40px;
+  align-self: center;
+  
 }
 
 .col-4 {

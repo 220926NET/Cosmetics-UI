@@ -26,7 +26,7 @@ export class WishlistComponent implements OnInit {
   constructor(private wish: WishService, private productService: ProductService) { }
   
   ngOnInit(): void {
-    var userIdIfLoggedIn = sessionStorage.getItem('userId')
+    var userIdIfLoggedIn = sessionStorage.getItem('ID')
     if(userIdIfLoggedIn != null){
       this.loggedIn = true;
       let userIdToInt = parseInt(userIdIfLoggedIn);
