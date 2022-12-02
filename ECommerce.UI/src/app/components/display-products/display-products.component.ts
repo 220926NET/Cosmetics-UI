@@ -30,6 +30,7 @@ export class DisplayProductsComponent implements OnInit {
   }
 
   getSelectedProduct(product: string) {
+    this.ResetPageCount();
     this.productService.getProducts(product).subscribe((res) => {
       this.products = res;
       this.productsToShow = this.products.slice(0, 6);
@@ -52,5 +53,14 @@ export class DisplayProductsComponent implements OnInit {
       this.productCount
     );
     --this.page;
+  }
+
+  // when a new product is clicked 
+  // reset count to 0 
+  // reset page to 1; 
+  ResetPageCount() {
+    this.productCount = 6; 
+    this.page = 1; 
+    this.productsToShow = this.products.slice(0,6);
   }
 }

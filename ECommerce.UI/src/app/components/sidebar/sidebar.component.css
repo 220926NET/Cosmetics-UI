@@ -18,3 +18,21 @@
   text-decoration: underline;
   cursor: pointer;
 }
+/* small size viewport */
+@media screen and (max-width: 640px) {
+  /* Item sizing */
+  .sidebar-container {
+    flex-direction: row;
+    gap: 5px;
+    width: 100%;
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+
+
+  .sidebar-product{
+    background-color: white;
+    height: 30px;
+  }
+ 
+}

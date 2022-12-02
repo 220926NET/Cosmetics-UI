@@ -1,10 +1,11 @@
 <div class="sidebar">
   <app-sidebar (selectedProduct)="getSelectedProduct($event)"></app-sidebar>
 </div>
-<span class="btn btn-prev" (click)="DecrementProductCount()" [hidden]="productCount == 6"
+
+<!-- <span class="btn btn-prev" (click)="DecrementProductCount()" [hidden]="productCount == 6"
   ><</span
 >
-<span class="btn btn-next" (click)="IncrementProductCount()" [hidden]="productCount > products.length">></span>
+<span class="btn btn-next" (click)="IncrementProductCount()" [hidden]="productCount > products.length">></span> -->
 <div class="container">
   <div class="row align-items-start">
     <div class="col" *ngFor="let product of productsToShow; let i = index">
@@ -14,6 +15,21 @@
       ></app-product-card>
     </div>
   </div>
-
+  
+  
 </div>
-<span class="page-count">page {{page}}</span>
+<div class="btn-container-small-screen">
+  <span class="btn btn-prev-small-screen" (click)="DecrementProductCount()" [hidden]="productCount == 6"
+  ><</span
+>
+<span class="page-count-small-screen">page {{page}}</span>
+<span class="btn btn-next-small-screen" (click)="IncrementProductCount()" [hidden]="productCount > products.length">>
+</span>
+</div>
+<!-- <div class="btn-container-small-screen">
+  <span class="btn btn-prev-small-screen" (click)="DecrementProductCount()" [hidden]="productCount == 6"
+  ><</span
+>
+<span class="page-count-small-screen">page {{page}}</span>
+<span class="btn btn-next-small-screen" (click)="IncrementProductCount()" [hidden]="productCount > products.length">></span>
+</div> -->

@@ -2,11 +2,14 @@
   size: auto;
   min-width: 275px;
   max-width: 200px;
+  min-height: 400px;
+  max-height: 400px;
   height: fit-content;
   transition: 0.2s ease-out;
 }
 
 img {
+  padding-top: 10px;
   object-fit: contain;
   justify-content: center;
   height: auto;
@@ -24,9 +27,15 @@ div {
   padding: 10px; 
 }
 
-
-
 .card:hover {
   box-shadow: 0 5px 10px rgba(0, 0, 0, 0.2);
   transform: translate3d(0, -10px, 0);
+}
+
+/* small size viewport */
+@media screen and (max-width: 640px) {
+  /* Item sizing */
+  .card{
+    margin: auto;
+  }
 }
