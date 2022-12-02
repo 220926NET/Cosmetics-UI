@@ -1,41 +1,44 @@
 export class Product {
   id: number;
-  apiId?:number;
+  apiId?: number;
   name: string;
+  type: string;
   brand: string;
   quantity: number;
   price: number;
   description: string;
   image: string;
-  colorHexValues: string[];
   colourName?:string;
   hexValue?:string;
+  discount?: number;
   
 
   constructor(
-    id: number,
-    APIId:number,
-    name: string,
-    quantity: number,
-    description: string,
-    price: number,
-    image: string,
-    brand: string,
-    colorHexValues: string[],
-    colour:string,
-    // hex:string
+    Id: number,
+    ApiId:number,
+    Name: string,
+    Type: string,
+    Brand: string,
+    Inventory: number,
+    Price: number,
+    Description: string,
+    Image: string,
+    ColourName: string,
+    HexValue: string,
+    Discount: number
   ) {
-    this.id = id;
-    this.apiId = APIId;
-    this.name = name;
-    this.quantity = quantity;
-    this.description = description;
-    this.price = price;
-    this.image = image;
-    this.brand = brand;
-    this.colorHexValues = colorHexValues;
-    this.colourName = colour;
-    // this.hexValue = hex;
+    this.id = Id;
+    this.apiId = ApiId;
+    this.name = Name;
+    this.type = Type;
+    this.brand = Brand;
+    this.quantity = Inventory;
+    this.price = Price;
+    this.description = Description;
+    this.image = Image;
+    this.colourName = ColourName;
+    this.hexValue = HexValue;
+    this.discount = Discount;
   }
 
 

@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+//import { Console } from 'console';
 import { ProductDetails } from 'src/app/models/ProductDetails/ProductDetails';
 import { ProductService } from 'src/app/services/product.service';
 
@@ -24,7 +25,6 @@ export class DisplayProductsComponent implements OnInit {
     this.productService.getProducts('lipstick').subscribe((res) => {
       this.products = res;
       this.productsToShow = this.products.slice(0, 6);
-     
      
     });
   }

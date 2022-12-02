@@ -13,7 +13,7 @@ import { ActivatedRoute } from '@angular/router'
 export class ProductPageComponent implements OnInit {
 
   apiId:number = 0;
-  products:Product[]= [];
+  products:Product[] = [];
 
   reviews:Review[] = [];
   constructor(
@@ -23,9 +23,7 @@ export class ProductPageComponent implements OnInit {
     ) { console.log('inside a product page!') }
 
   ngOnInit(): void {
-    
-    console.log('inside ngInit!')
-    let idString:string|null = this.route.snapshot.paramMap.get('id');
+    let idString:string|null = this.route.snapshot.paramMap.get('apiid');
     this.apiId = parseInt(idString ? idString: '0');
     console.log(`Got apiId of ${this.apiId}`);
 
@@ -36,8 +34,9 @@ export class ProductPageComponent implements OnInit {
       // Remove '\n' found in the product description
       this.products[0].description = this.products[0].description.replace(/\\n/g,' ');
       console.log(this.products[0]);
+      this.reviewService.getByProductId(this.products[0].id, true).subscribe(data => this.reviews = data);
     });
-    this.reviewService.getByProductId(this.products[0].id, true).subscribe(data => this.reviews = data);
+    
     //do after product is loaded
     
   }
