@@ -15,7 +15,6 @@ export class ProductReviewFormComponent implements OnInit {
   }
 
   leaveReview() {
-    alert('!')
     this.isLeavingReview=true;
   }
 
