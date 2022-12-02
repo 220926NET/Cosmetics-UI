@@ -17,6 +17,7 @@ import { ProductPageComponent } from './components/product-page/product-page.com
 import { ProductReviewComponent } from './components/product-review/product-review.component';
 import { SidebarComponent } from './components/sidebar/sidebar.component';
 import { FooterComponent } from './components/footer/footer.component';
+import { PurchaseSuccessComponent } from './components/purchase-success/purchase-success.component';
 
 
 @NgModule({
@@ -34,7 +35,8 @@ import { FooterComponent } from './components/footer/footer.component';
     ProductPageComponent,
     ProductReviewComponent,
     SidebarComponent,
-    FooterComponent
+    FooterComponent,
+    PurchaseSuccessComponent
   ],
   imports: [
     BrowserModule,
