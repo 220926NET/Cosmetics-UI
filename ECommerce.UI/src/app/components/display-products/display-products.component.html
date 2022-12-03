@@ -1,19 +1,31 @@
-<div class="sidebar">
-  <app-sidebar (selectedProduct)="getSelectedProduct($event)"></app-sidebar>
-</div>
-<span class="btn btn-prev" (click)="DecrementProductCount()" [hidden]="productCount == 6"
-  ><</span
->
-<span class="btn btn-next" (click)="IncrementProductCount()" [hidden]="productCount > products.length">></span>
-<div class="container">
-  <div class="row align-items-start">
-    <div class="col" *ngFor="let product of productsToShow; let i = index">
-      <app-product-card
-        class="cardListItem"
-        [productInfo]="product"
-      ></app-product-card>
-    </div>
+<div class="display-frame">
+  <div class="sidebar">
+    <app-sidebar (selectedProduct)="getSelectedProduct($event)"></app-sidebar>
   </div>
-
+  <!-- <span class="btn btn-prev" (click)="DecrementProductCount()" [hidden]="productCount == 6"><</span> -->
+  <!-- <span class="btn btn-next" id="triangle" (click)="IncrementProductCount()" [hidden]="productCount > products.length">></span> -->
+  
+  <div class="container">
+    <div class="cardsAndNextPageButton">
+      <div class="triangle">
+        <p class="btn btn-prev" (click)="DecrementProductCount()" [hidden]="productCount == 6"><</p>
+      </div>
+      <div id="cardsAndPageNum">
+        <div class="row align-items-start">
+          <div class="col" *ngFor="let product of productsToShow; let i = index">
+            <app-product-card
+              class="cardListItem"
+              [productInfo]="product"
+            ></app-product-card>
+          </div>
+        </div>
+        <div class="noSpanPage"><p>page {{page}}</p></div>
+      </div>
+      <div class="triangle">
+        <p class="btn btn-next" (click)="IncrementProductCount()" [hidden]="productCount > products.length">></p>
+      </div>
+    </div>
+    
+    <!-- <span class="page-count">page {{page}}</span> -->
+  </div>
 </div>
-<span class="page-count">page {{page}}</span>
