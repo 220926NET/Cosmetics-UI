@@ -13,29 +13,27 @@ import { ActivatedRoute } from '@angular/router'
 export class ProductPageComponent implements OnInit {
 
   apiId:number = 0;
-  products:Product[] = [];
+  productList:Product[] = [];
+  product:Product = {} as Product;
 
   reviews:Review[] = [];
   constructor(
     private reviewService:ReviewService, 
     private productService:ProductService,
     private route: ActivatedRoute
-    ) { }
+    ) {}
 
   ngOnInit(): void {
-    let idString:string|null = this.route.snapshot.paramMap.get('apiid');
-    this.apiId = parseInt(idString ? idString: '0');
-
+    this.apiId = parseInt(this.route.snapshot.paramMap.get('apiid') ?? '0');
     
     this.productService.getProductsWithSameAPIId(this.apiId).subscribe(data => {
-      this.products = data; 
-      // Remove '\n' found in the product description
-      this.products[0].description = this.products[0].description.replace(/\\n/g,' ');
-      console.log(this.products[0]);
-      this.reviewService.getByProductId(this.products[0].id, true).subscribe(data => this.reviews = data);
+      this.productList = data; 
+      if (this.productList.length > 0) {
+        this.product = this.productList[0];
+        // Remove '\n' found in the product description
+        this.product.description = this.product.description.replace(/\\n/g,' ');
+      }
     });
-    
-    //do after product is loaded
-    
+    this.reviewService.getByApiId(this.apiId, true).subscribe(data => this.reviews = data);
   }
 }
