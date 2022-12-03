@@ -24,8 +24,7 @@ export class ProductPageComponent implements OnInit {
     ) {}
 
   ngOnInit(): void {
-    let idString:string|null = this.route.snapshot.paramMap.get('apiid');
-    this.apiId = parseInt(idString ? idString: '0');
+    this.apiId = parseInt(this.route.snapshot.paramMap.get('apiid') ?? '0');
     
     this.productService.getProductsWithSameAPIId(this.apiId).subscribe(data => {
       this.productList = data; 

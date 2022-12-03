@@ -33,7 +33,7 @@ export class ReviewService {
     return this.http.get<Review[]>(url);
   }
 
-  createReview(review:Review):Observable<Review> {
+  createReview(review:any):Observable<Review> {
     return this.http.post<Review>(this.reviewUrl, review);
   }
 }

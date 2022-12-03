@@ -1,8 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import {ReviewService} from 'src/app/services/review.service';
-import { Review } from 'src/app/models/review';
-import { AuthService } from 'src/app/services/auth.service';
+import { ActivatedRoute } from '@angular/router'
 
 @Component({
   selector: 'app-product-review-form',
@@ -12,11 +11,13 @@ import { AuthService } from 'src/app/services/auth.service';
 export class ProductReviewFormComponent implements OnInit {
   reviewForm:FormGroup = {} as FormGroup;
   isLeavingReview:boolean = false;
-  submitAttempted = false;
+  submitAttempted:boolean = false;
+  submitAccepted:boolean = false;
 
-  constructor(private formBuilder:FormBuilder,
+  constructor(
+    private formBuilder:FormBuilder,
     private reviewService:ReviewService,
-    private authService: AuthService) { }
+    private route: ActivatedRoute) { }
 
   ngOnInit(): void {
     this.reviewForm = this.formBuilder.group({
@@ -29,8 +30,6 @@ export class ProductReviewFormComponent implements OnInit {
         [ Validators.required, Validators.minLength(5), Validators.maxLength(1000)]
       ]
     });
-
-    //this.reviewForm.valueChanges.subscribe(console.log);
   }
 
   leaveReview() {
@@ -42,18 +41,19 @@ export class ProductReviewFormComponent implements OnInit {
   }
 
   submitReview() {
-    alert(this.authService.loggedIn);
     this.submitAttempted = true;
-    if (!this.reviewForm.invalid) {
+    if (!this.reviewForm.invalid && this.isLoggedIn() && !this.submitAccepted) {
+      this.submitAccepted = true;
       let review = {
-        userId:0,
-        productId:0,
-        rating: this.rating?.value,
+        userId: parseInt(sessionStorage.getItem('ID') ?? "0"),
+        apiId: parseInt(this.route.snapshot.paramMap.get('apiid') ?? '0'),
+        rating: parseInt(this.rating?.value),
         text: this.text?.value
       }
-      //this.reviewService.createReview(review);
+      this.reviewService.createReview(review).subscribe(data => {
+        window.location.reload();
+      });
     }
-
   }
 
   get rating() {
