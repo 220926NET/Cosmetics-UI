@@ -23,8 +23,17 @@ export class ReviewService {
     return this.http.get<Review[]>(url);
   }
 
+  getByApiId(apiId:number, includeUser:boolean = false, includeProduct:boolean = false):Observable<Review[]> {
+    let url:string = this.reviewUrl + "/apiId/" + apiId.toString() + `?includeUser=${includeUser}&includeProduct=${includeProduct}`;
+    return this.http.get<Review[]>(url);
+  }
+
   getByUserId(userId:number, includeUser:boolean = false, includeProduct:boolean = false):Observable<Review[]> {
     let url:string = this.reviewUrl + "/user/" + userId.toString() + `?includeUser=${includeUser}&includeProduct=${includeProduct}`;
     return this.http.get<Review[]>(url);
+  }
+
+  createReview(review:Review):Observable<Review> {
+    return this.http.post<Review>(this.reviewUrl, review);
   }
 }

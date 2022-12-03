@@ -22,14 +22,4 @@ export interface Review {
 
 	// Review text
 	text:string;
-
-	/*
-    constructor(id:number, userId:number, productId:number, rating:number, text:string) {
-        this.id = id;
-        this.userId = userId;
-        this.productId = productId;
-        this.rating = rating;
-        this.text = text;
-    }
-	*/
 }
