@@ -26,15 +26,7 @@ export class ProductPageComponent implements OnInit {
     ) {}
 
   ngOnInit(): void {
-<<<<<<< HEAD
-    let idString:string|null = this.route.snapshot.paramMap.get('apiid');
-    this.apiId = parseInt(idString ? idString: '0');
-
-    //checking products
-    console.log(this.products);
-=======
     this.apiId = parseInt(this.route.snapshot.paramMap.get('apiid') ?? '0');
->>>>>>> fb7d46cb2a41bdd48b5a6694c60b3090f642d786
     
     this.productService.getProductsWithSameAPIId(this.apiId).subscribe(data => {
       this.productList = data; 
@@ -44,14 +36,7 @@ export class ProductPageComponent implements OnInit {
         this.product.description = this.product.description.replace(/\\n/g,' ');
       }
     });
-<<<<<<< HEAD
-    
-    //do after product is loaded
-    
-
-=======
     this.reviewService.getByApiId(this.apiId, true).subscribe(data => this.reviews = data);
->>>>>>> fb7d46cb2a41bdd48b5a6694c60b3090f642d786
   }
 
   //need select specific product and its quantity
@@ -60,7 +45,7 @@ export class ProductPageComponent implements OnInit {
 
   //call addtocart function
   public AddToCart(){
-    this.productService.AddtoCartService( {product : this.products[0], quantity:1})
+    this.productService.AddtoCartService( {product : this.productList[0], quantity:1})
   }
 
 
