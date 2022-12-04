@@ -15,6 +15,7 @@ export class ProductPageComponent implements OnInit {
   apiId:number = 0;
   productList:Product[] = [];
   product:Product = {} as Product;
+  quantity: number = 1;
   
 
   
@@ -41,13 +42,15 @@ export class ProductPageComponent implements OnInit {
     this.reviewService.getByApiId(this.apiId, true).subscribe(data => this.reviews = data);
   }
 
-  //need select specific product and its quantity
-
+  public updateQuantity(e:any){
+    this.quantity = e.target.value;
+    console.log(this.quantity);
+  }
   
 
   //call addtocart function
   public AddToCart(){
-    this.productService.AddtoCartService( {product : this.product, quantity:1})
+    this.productService.AddtoCartService( {product : this.product, quantity:this.quantity})
   }
 
 

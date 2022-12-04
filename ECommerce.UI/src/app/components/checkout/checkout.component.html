@@ -68,9 +68,9 @@
 
             <div class="mt-4 mb-4 d-flex justify-content-between">
 
-                <button class="btn btn-danger" [routerLink]="['/cart']">Back to Cart</button>
+                <button class="btn btn-outline-danger my-2 my-sm-0" [routerLink]="['/cart']">Back to Cart</button>
 
-                <button class="btn btn-success px-3" (click)="onSubmit();">Pay ${{totalPrice}}</button>
+                <button class="btn btn-outline-danger my-2 my-sm-0" (click)="onSubmit();" style="color:white; background-color:green; border-color:aliceblue">Pay ${{totalPrice}}</button>
 
             </div>
 
@@ -78,14 +78,14 @@
 
         <div class="col-md-4">
 
-            <div class="card card-blue p-3 text-white mb-3">
+            <div class="card card-blue p-3 text-white mb-3" style="background-color: orange;">
 
             <span>You have to pay</span>
                 <div class="d-flex flex-row align-items-end mb-3">
-                    <h1 class="mb-0 yellow">${{totalPrice}}</h1>
+                    <h1 class="mb-0 yellow" style="color: rgb(250, 250, 250);">${{totalPrice}}</h1>
                 </div>
 
-                <div class="hightlight">
+                <div class="hightlight" style="background-color: orange;">
 
                     <span>100% Guaranteed Satisfaction!</span>
                     

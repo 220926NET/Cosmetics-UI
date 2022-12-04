@@ -4,12 +4,25 @@
         
         <div class="col">
             <div class="row">
-                <div class="col border"><span>Buy Options</span>
+                <div class="col border"><span>Color Options</span>
                     <br>
                     <div class="btn-group" >
-                        
                         <button  class="colorOption" *ngFor="let Product of productList" style=" background-color: {{Product.hexValue}}" (click)="product=Product"></button>
                     </div>
+                    
+                    <!---->
+                    <div>
+                        <p>Quantity Options</p>
+                        <select class="btn btn-light" style="color:green;" (change)="updateQuantity($event)">
+                            <option default>1</option>
+                            <option>2</option>
+                            <option>3</option>
+                            <option>4</option>
+                            <option>5</option>
+                        </select>
+                    </div>
+                    <!---->
+
                     
                 </div>
                 <div class="add-to-cart">

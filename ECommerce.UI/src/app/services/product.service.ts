@@ -106,7 +106,8 @@ export class ProductService {
   //add productlist to cart
   public AddtoCartService( productList:{product:Product;quantity:number} ){
     
-    let cart : Cart = {cartCount: this._cart.getValue().cartCount+1, products :this._cart.getValue().products, totalPrice:this._cart.getValue().totalPrice+productList.product.price }
+    let cart : Cart = {cartCount: this._cart.getValue().cartCount+1, products :this._cart.getValue().products, totalPrice:this._cart.getValue().totalPrice+(productList.product.price*productList.quantity) }
+    console.log(cart.cartCount);
     cart.products.push(productList)
     this._cart.next(cart);
     console.log(this._cart);
