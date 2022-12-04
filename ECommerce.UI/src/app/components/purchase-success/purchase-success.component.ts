@@ -19,6 +19,7 @@ export class PurchaseSuccessComponent implements OnInit {
   ngOnInit(): void {
       this.paymentInfo = this.paymentInfoService.showPaymentInfo();
       this.products = this.cartInfo.showCartInfo();
+      this.totalPrice = this.cartInfo.showTotalPrice();
       
   }
 
@@ -28,6 +29,7 @@ export class PurchaseSuccessComponent implements OnInit {
     product: Product,
     quantity: number
   }[] = [];
+  totalPrice! : number;
   
 
 

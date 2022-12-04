@@ -25,17 +25,19 @@
 
 <div>
     <h4>Order Information</h4>
-    <table>
+    <table *ngFor="let Product of products">
         <tr>
-            <td>Product Name: {{products[0].product.name}}</td>
+            <td>Product Name: {{Product.product.name}}</td>
         </tr>
         <tr>
-            <td>Color: {{products[0].product.colourName}}</td>
+            <td>Color: {{Product.product.colourName}}</td>
         </tr>
         <tr>
-            <td>Quantity : {{products[0].quantity}}</td>
+            <td>Quantity : {{Product.quantity}}</td>
         </tr>
     </table>
 
 </div>
+
+<h3>Total Price : {{totalPrice}}</h2>
 
