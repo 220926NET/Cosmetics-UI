@@ -17,6 +17,7 @@ import { ProductReviewComponent } from './components/product-review/product-revi
 import { SidebarComponent } from './components/sidebar/sidebar.component';
 import { FooterComponent } from './components/footer/footer.component';
 import { PurchaseSuccessComponent } from './components/purchase-success/purchase-success.component';
+import { ProductReviewFormComponent } from './components/product-review-form/product-review-form.component';
 
 
 @NgModule({
@@ -35,7 +36,8 @@ import { PurchaseSuccessComponent } from './components/purchase-success/purchase
     ProductReviewComponent,
     SidebarComponent,
     FooterComponent,
-    PurchaseSuccessComponent
+    PurchaseSuccessComponent,
+    ProductReviewFormComponent
   ],
   imports: [
     BrowserModule,

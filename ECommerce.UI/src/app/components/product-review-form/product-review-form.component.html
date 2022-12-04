@@ -1,0 +1,56 @@
+<div class="container mb-4" *ngIf="isLoggedIn()">
+  <div *ngIf="!isLeavingReview">
+      <button (click)="leaveReview()" class="btn btn-secondary mx-2">Leave a Review</button>
+  </div>
+  <div>
+    <form *ngIf="isLeavingReview" class="p-4" [formGroup]="reviewForm"> 
+      <div class="form-group">
+        <div class="">
+            <label for="review-text">Rate this product</label>
+        </div>
+        <div class="form-check form-check-inline">
+            <input class="form-check-input" type="radio" name="rating" id="rate1" value="1" formControlName="rating">
+            <label class="form-check-label" for="rate1">1</label>
+          </div>
+          <div class="form-check form-check-inline">
+            <input class="form-check-input" type="radio" name="rating" id="rate2" value="2" formControlName="rating">
+            <label class="form-check-label" for="rate2">2</label>
+          </div>
+          <div class="form-check form-check-inline">
+            <input class="form-check-input" type="radio" name="rating" id="rate3" value="3" formControlName="rating">
+            <label class="form-check-label" for="rate3">3</label>
+          </div>
+          <div class="form-check form-check-inline">
+            <input class="form-check-input" type="radio" name="rating" id="rate4" value="4" formControlName="rating">
+            <label class="form-check-label" for="rate4">4</label>
+          </div>
+          <div class="form-check form-check-inline">
+            <input class="form-check-input" type="radio" name="rating" id="rate5" value="5" formControlName="rating">
+            <label class="form-check-label" for="rate5">5</label>
+          </div>
+        <div *ngIf="rating?.invalid && submitAttempted" class="text-danger">
+          Rating is required.
+        </div>
+      </div>
+
+        <div class="form-group">
+            <label for="review-text">Share your thoughts</label>
+            <textarea class="form-control" id="review-text" rows="3" formControlName="text"></textarea>
+            <div *ngIf="text?.errors?.required && submitAttempted" class="text-danger">
+              Review is required.
+            </div>
+            <div *ngIf="text?.errors?.minlength && submitAttempted" class="text-danger">
+              Review must be at least 5 characters long.
+            </div>
+            <div *ngIf="text?.errors?.maxlength && submitAttempted" class="text-danger">
+              Review cannot be more than 1000 characters long.
+            </div>
+        </div>
+
+        <div class="form-group">
+          <button class="btn btn-primary mx-2" type="submit" (click)="submitReview()">Submit form</button>
+          <button class="btn btn-secondary mx-2" (click)="cancelLeaveReview()">Cancel</button>
+        </div>
+    </form>
+  </div>
+</div>

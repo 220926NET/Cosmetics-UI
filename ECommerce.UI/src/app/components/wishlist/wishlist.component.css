@@ -11,8 +11,9 @@
 }
 .wishCard{
     display:flex;
-    background-color: rgba(230, 215, 215, 0.5);
+    background-color: black;
     padding: 5px;
+    color:white;
 }
 
 .wishImageArea{
