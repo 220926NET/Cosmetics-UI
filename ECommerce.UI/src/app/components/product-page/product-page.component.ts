@@ -52,4 +52,6 @@ export class ProductPageComponent implements OnInit {
   public AddToCart(){
     this.productService.AddtoCartService( {product : this.products[0], quantity:1})
   }
+
+
 }

@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { Product } from 'src/app/models/product';
 import { ProductService } from 'src/app/services/product.service';
+import { CartInfoService } from 'src/app/services/cart-info.service';
 
 @Component({
   selector: 'app-cart',
@@ -21,7 +22,7 @@ export class CartComponent implements OnInit {
 
   
 
-  constructor(private productService: ProductService, private router: Router) {}
+  constructor(private productService: ProductService, private router: Router, private cartInfo : CartInfoService) {}
 
   ngOnInit(): void {
     this.productService.getCart().subscribe(
@@ -31,12 +32,15 @@ export class CartComponent implements OnInit {
           (element) => {this.cartProducts.push(element.product)}
         );
         this.totalPrice = cart.totalPrice;
-        console.log(cart.products)
+        console.log(cart.products);
+        this.cartInfo.saveCartInfo(this.products);
       }
     );
   }
 
   emptyCart(): void {
+
+
     let cart = {
       cartCount: 0,
       products: [],
@@ -45,5 +49,6 @@ export class CartComponent implements OnInit {
     this.productService.setCart(cart);
     this.router.navigate(['/home']);
   }
+
 
 }

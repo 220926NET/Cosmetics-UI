@@ -44,7 +44,7 @@ import { PurchaseSuccessComponent } from './components/purchase-success/purchase
     FormsModule,
     ReactiveFormsModule,
   ],
-  providers: [CheckoutComponent],
+  providers: [CheckoutComponent, CartComponent],
   bootstrap: [AppComponent]
 })
 export class AppModule {}
