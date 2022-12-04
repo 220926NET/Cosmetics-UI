@@ -15,6 +15,7 @@ export class ProductPageComponent implements OnInit {
   apiId:number = 0;
   productList:Product[] = [];
   product:Product = {} as Product;
+  
 
   
 
@@ -30,6 +31,7 @@ export class ProductPageComponent implements OnInit {
     
     this.productService.getProductsWithSameAPIId(this.apiId).subscribe(data => {
       this.productList = data; 
+      console.log(this.productList);
       if (this.productList.length > 0) {
         this.product = this.productList[0];
         // Remove '\n' found in the product description
@@ -45,7 +47,7 @@ export class ProductPageComponent implements OnInit {
 
   //call addtocart function
   public AddToCart(){
-    this.productService.AddtoCartService( {product : this.productList[0], quantity:1})
+    this.productService.AddtoCartService( {product : this.product, quantity:1})
   }
 
 

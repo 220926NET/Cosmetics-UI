@@ -4,9 +4,16 @@
         
         <div class="col">
             <div class="row">
-                <div class="col border"><span>Buy Options</span></div>
-                <div class="add to cart">
-                    <button class="btn btn-light" (click)="AddToCart()" style="color:green">
+                <div class="col border"><span>Buy Options</span>
+                    <br>
+                    <div class="btn-group" >
+                        
+                        <button  class="colorOption" *ngFor="let Product of productList" style=" background-color: {{Product.hexValue}}" (click)="product=Product"></button>
+                    </div>
+                    
+                </div>
+                <div class="add-to-cart">
+                    <button class="add-to-cart" class="btn btn-light" (click)="AddToCart()" style="color:green">
                         Add To Cart
                     </button>
                 </div>
