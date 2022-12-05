@@ -21,6 +21,7 @@ interface Cart {
 })
 export class ProductService {
   private productUrl: string = '/Product/';
+  private purchaseURL: string = '/Purchase?userId='
 
   //testing _cart
   p1 : Product = {
@@ -102,7 +103,8 @@ export class ProductService {
     const userId = sessionStorage.getItem('ID');
     return this.http.put<any>(
           //environment.baseUrl + this.productUrl,
-          `https://localhost:7078/Purchase?userId=${userId}`,
+          environment.baseUrl + this.purchaseURL + userId?.toString(),
+          //`https://localhost:7078/Purchase?userId=${userId}`,
           products,
           {
             headers: environment.headers,
