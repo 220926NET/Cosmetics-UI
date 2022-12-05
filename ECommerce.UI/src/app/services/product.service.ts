@@ -30,7 +30,7 @@ export class ProductService {
     name: 'n1',
     type: 't1',
     brand: 'b1',
-   quantity: 1,
+    inventory: 1,
     price: 9.88,
     description: 'string',
     image: 'line'

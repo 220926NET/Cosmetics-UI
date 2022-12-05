@@ -16,8 +16,7 @@ export class ProductPageComponent implements OnInit {
   productList:Product[] = [];
   product:Product = {} as Product;
   quantity: number = 1;
-  
-
+  realPrice: number = 0.00;
   
 
   reviews:Review[] = [];
@@ -38,6 +37,7 @@ export class ProductPageComponent implements OnInit {
         // Remove '\n' found in the product description
         this.product.description = this.product.description.replace(/\\n/g,' ');
       }
+      this.realPrice = this.productList[0].price - (this.productList[0].price * (this.productList[0].discount ?? 0));
     });
     this.reviewService.getByApiId(this.apiId, true).subscribe(data => this.reviews = data);
   }
@@ -45,13 +45,16 @@ export class ProductPageComponent implements OnInit {
   public updateQuantity(e:any){
     this.quantity = e.target.value;
     console.log(this.quantity);
+    this.updatePrice();
   }
   
+  public updatePrice() {
+    this.realPrice = (this.quantity * this.product.price) - (this.quantity * this.product.price * (this.product.discount ?? 0));
+  }
 
   //call addtocart function
   public AddToCart(){
+    this.product.price = this.realPrice;
     this.productService.AddtoCartService( {product : this.product, quantity:this.quantity})
   }
-
-
 }

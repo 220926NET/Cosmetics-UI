@@ -15,3 +15,27 @@ button.colorOption:focus {
     width: 25px;
     position: relative;
 }
+
+.centerImage {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    width: 50%;
+}
+
+.oldPrice {
+    text-decoration: line-through;
+    color: gray;
+}
+
+.discount {
+    position: absolute;
+    text-align: center;
+    background-color: #000000;
+    padding-right: 20px;
+    padding-left: 10px;
+    color: white;
+    font-size: 14px;
+    border-radius: 21px;
+    font-weight: 900;
+  }

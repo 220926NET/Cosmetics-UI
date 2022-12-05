@@ -5,7 +5,7 @@ export class ProductDetails
   name: string;
   type: string;
   brand: string;
-  quantity: number;
+  inventory: number;
   price: number;
   description: string;
   image: string;
@@ -16,7 +16,7 @@ export class ProductDetails
     apiId:number,
     name: string,
     type: string,
-    quantity: number,
+    inventory: number,
     description: string,
     price: number,
     image: string,
@@ -30,7 +30,7 @@ export class ProductDetails
     this.id = id;
     this.name = name;
     this.type = type;
-    this.quantity = quantity;
+    this.inventory = inventory;
     this.description = description;
     this.price = price;
     this.image = image;
