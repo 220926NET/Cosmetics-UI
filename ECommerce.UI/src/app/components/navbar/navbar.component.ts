@@ -13,6 +13,7 @@ export class NavbarComponent implements OnInit{
 
   cartCount!: number;
   subscription!: Subscription;
+  loggedIn: boolean = false;
 
   constructor(private authService: AuthService, private router: Router, private productService: ProductService) { }
   
@@ -20,6 +21,10 @@ export class NavbarComponent implements OnInit{
     this.subscription = this.productService.getCart().subscribe(
       (cart) => this.cartCount = cart.cartCount
     );
+    var userIdIfLoggedIn = sessionStorage.getItem('ID')
+    if (userIdIfLoggedIn != null){
+      this.loggedIn = true;
+    }
   }
 
   ngOnDestroy() {
@@ -28,6 +33,7 @@ export class NavbarComponent implements OnInit{
 
   logout() {
     this.authService.logout();
+    this.loggedIn = false;
     this.router.navigate(['login']);
     sessionStorage.clear();
   }
