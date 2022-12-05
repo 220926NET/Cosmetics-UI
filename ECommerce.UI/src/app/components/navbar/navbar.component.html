@@ -11,8 +11,13 @@
       Cart
       <span class="badge badge-info">{{ cartCount }}</span>
     </button>
-    <button class="btn btn-outline-danger my-2 my-sm-0" (click)="logout()">
+    <button class="btn btn-outline-danger my-2 my-sm-0" *ngIf="loggedIn; else elseBlock" (click)="logout()">
       Logout
     </button>
+    <ng-template #elseBlock>
+      <button class="btn btn-outline-success my-2 my-sm-0" (click)="logout()">
+        Login
+      </button>
+    </ng-template>
   </form>
 </nav>

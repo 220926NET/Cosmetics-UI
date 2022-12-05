@@ -4,7 +4,7 @@ export class Product {
   name: string;
   type: string;
   brand: string;
-  quantity: number;
+  inventory: number;
   price: number;
   description: string;
   image: string;
@@ -32,7 +32,7 @@ export class Product {
     this.name = Name;
     this.type = Type;
     this.brand = Brand;
-    this.quantity = Inventory;
+    this.inventory = Inventory;
     this.price = Price;
     this.description = Description;
     this.image = Image;
