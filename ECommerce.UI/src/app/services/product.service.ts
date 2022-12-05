@@ -83,19 +83,35 @@ export class ProductService {
     );
   }
 
-  public purchase(
-    products: { id: number; quantity: number }[]
-  ): Observable<any> {
-    const payload = JSON.stringify(products);
-    return this.http.patch<any>(
-      environment.baseUrl + this.productUrl,
-      payload,
-      {
-        headers: environment.headers,
-        withCredentials: environment.withCredentials,
-      }
-    );
+  // public purchase(
+  //   products: { id: number; quantity: number }[]
+  // ): Observable<any> {
+  //   const payload = JSON.stringify(products);
+  //   return this.http.put<any>(
+  //     environment.baseUrl + this.productUrl,
+  //     payload,
+  //     {
+  //       headers: environment.headers,
+  //       withCredentials: environment.withCredentials,
+  //     }
+  //   );
+  // }
+
+  public purchase(products: { id: number; quantity: number }[]):Observable<any>{
+    //const payload = JSON.stringify(products);
+    const userId = sessionStorage.getItem('ID');
+    return this.http.put<any>(
+          //environment.baseUrl + this.productUrl,
+          `https://localhost:7078/Purchase?userId=${userId}`,
+          products,
+          {
+            headers: environment.headers,
+            withCredentials: environment.withCredentials,
+          }
+        );
   }
+
+
  
 
   //creat productlist

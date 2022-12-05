@@ -33,9 +33,9 @@ export class CartComponent implements OnInit {
         );
         this.totalPrice = cart.totalPrice;
         console.log(cart.products);
-        this.cartInfo.saveCartInfo(this.products, this.totalPrice);
       }
     );
+    this.cartInfo.saveCartInfo(this.products, this.totalPrice);
   }
 
   emptyCart(): void {
@@ -50,5 +50,5 @@ export class CartComponent implements OnInit {
     this.router.navigate(['/home']);
   }
 
-
+  
 }
