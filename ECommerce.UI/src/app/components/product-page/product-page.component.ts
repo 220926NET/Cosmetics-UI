@@ -15,6 +15,10 @@ export class ProductPageComponent implements OnInit {
   apiId:number = 0;
   productList:Product[] = [];
   product:Product = {} as Product;
+  quantity: number = 1;
+  
+
+  
 
   reviews:Review[] = [];
   constructor(
@@ -28,6 +32,7 @@ export class ProductPageComponent implements OnInit {
     
     this.productService.getProductsWithSameAPIId(this.apiId).subscribe(data => {
       this.productList = data; 
+      console.log(this.productList);
       if (this.productList.length > 0) {
         this.product = this.productList[0];
         // Remove '\n' found in the product description
@@ -36,4 +41,17 @@ export class ProductPageComponent implements OnInit {
     });
     this.reviewService.getByApiId(this.apiId, true).subscribe(data => this.reviews = data);
   }
+
+  public updateQuantity(e:any){
+    this.quantity = e.target.value;
+    console.log(this.quantity);
+  }
+  
+
+  //call addtocart function
+  public AddToCart(){
+    this.productService.AddtoCartService( {product : this.product, quantity:this.quantity})
+  }
+
+
 }

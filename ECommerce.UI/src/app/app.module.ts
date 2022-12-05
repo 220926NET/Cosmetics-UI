@@ -1,6 +1,5 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
-
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { LoginComponent } from './components/login/login.component';
@@ -17,6 +16,7 @@ import { ProductPageComponent } from './components/product-page/product-page.com
 import { ProductReviewComponent } from './components/product-review/product-review.component';
 import { SidebarComponent } from './components/sidebar/sidebar.component';
 import { FooterComponent } from './components/footer/footer.component';
+import { PurchaseSuccessComponent } from './components/purchase-success/purchase-success.component';
 import { ProductReviewFormComponent } from './components/product-review-form/product-review-form.component';
 
 
@@ -36,6 +36,7 @@ import { ProductReviewFormComponent } from './components/product-review-form/pro
     ProductReviewComponent,
     SidebarComponent,
     FooterComponent,
+    PurchaseSuccessComponent,
     ProductReviewFormComponent
   ],
   imports: [
@@ -45,7 +46,7 @@ import { ProductReviewFormComponent } from './components/product-review-form/pro
     FormsModule,
     ReactiveFormsModule,
   ],
-  providers: [],
-  bootstrap: [AppComponent],
+  providers: [CheckoutComponent, CartComponent],
+  bootstrap: [AppComponent]
 })
 export class AppModule {}

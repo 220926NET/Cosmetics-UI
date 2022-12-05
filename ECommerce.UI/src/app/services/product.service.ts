@@ -4,6 +4,7 @@ import { BehaviorSubject, Observable } from 'rxjs';
 import { Product } from '../models/product';
 import { environment } from 'src/environments/environment';
 import { ProductDetails } from '../models/ProductDetails/ProductDetails';
+import { CartComponent } from '../components/cart/cart.component';
 
 interface Cart {
   cartCount: number;
@@ -21,10 +22,29 @@ interface Cart {
 export class ProductService {
   private productUrl: string = '/Product/';
 
+  //testing _cart
+  p1 : Product = {
+    id: 1,
+    //apiId?: number;
+    name: 'n1',
+    type: 't1',
+    brand: 'b1',
+   quantity: 1,
+    price: 9.88,
+    description: 'string',
+    image: 'line'
+    //colourName?:string;
+    //hexValue?:string;
+    //discount?: number;
+  }
+  
+
   private _cart = new BehaviorSubject<Cart>({
     cartCount: 0,
     products: [],
-    totalPrice: 0.0,
+
+    totalPrice:0.0,
+
   });
 
   private _cart$ = this._cart.asObservable();
@@ -76,4 +96,22 @@ export class ProductService {
       }
     );
   }
-}
+ 
+
+  //creat productlist
+  // public AddtoList(productList:{product:Product;quantity:number}){
+  //   let cart
+  // }
+
+  //add productlist to cart
+  public AddtoCartService( productList:{product:Product;quantity:number} ){
+    
+    let cart : Cart = {cartCount: this._cart.getValue().cartCount+1, products :this._cart.getValue().products, totalPrice:this._cart.getValue().totalPrice+(productList.product.price*productList.quantity) }
+    console.log(cart.cartCount);
+    cart.products.push(productList)
+    this._cart.next(cart);
+    console.log(this._cart);
+    //console.log(this._cart)
+    //console.log(this._cart.getValue().cartCount);
+  }
+}  
