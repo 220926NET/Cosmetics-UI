@@ -8,16 +8,9 @@
   </div>
   <div class="input-group input-group-sm mb-3">
     <div class="input-group-prepend">
-      <span class="input-group-text" id="inputGroup-sizing-sm">$</span>
+      <span class="input-group-text" id="inputGroup-sizing-sm" *ngIf="productInfo.discount != 0.00" style="text-decoration: line-through;">{{productInfo.price | currency}}</span>
+      <span class="input-group-text" id="inputGroup-sizing-sm">{{productInfo.price - (productInfo.price * productInfo.discount!)| currency}}</span>
     </div>
-    <input
-      type="number"
-      class="form-control"
-      aria-label="Sizing example input"
-      [value]="productInfo.price"
-      aria-describedby="inputGroup-sizing-sm"
-      disabled
-    />
   </div>
   <!-- <div class="input-group input-group-sm mb-3">
     <div class="input-group-prepend">

@@ -6,7 +6,7 @@
         
         <div class="col">
             <div class="row">
-                <div class="col border"><span>Color Options</span>
+                <div class="col border"><span style="font-weight: bold;">Color Options</span>
                     <br>
                     <div class="btn-group" >
                         <button  class="colorOption" *ngFor="let Product of productList" style=" background-color: {{Product.hexValue}}" (click)="product=Product"></button>
@@ -15,14 +15,7 @@
                     <!---->
                     <div class ="row">
                         <div class="col">
-                            <p>Quantity</p>
-                            <!-- <select class="btn btn-light" style="color:green;" (change)="updateQuantity($event)">
-                                <option default>1</option>
-                                <option>2</option>
-                                <option>3</option>
-                                <option>4</option>
-                                <option>5</option>
-                            </select> -->
+                            <p style="font-weight: bold;">Quantity</p>
                             <select class="btn btn-light" *ngIf="quantity <= product.inventory; else elseBlock" style="color:green;" (change)="updateQuantity($event)">
                                 <option hidden default>{{quantity}}</option>
                                 <option>1</option>
@@ -44,13 +37,13 @@
                         </div>
 
                         <div class="col">
-                            <p>Price</p>
-                            <p class="oldPrice" *ngIf="product.discount != 0.00">{{product.price * quantity| currency}}</p>
+                            <div style="font-weight: bold;">Price</div>
+                            <div class="oldPrice" *ngIf="product.discount != 0.00">{{product.price * quantity| currency}}</div>
                             <p>{{realPrice | currency}}</p>
                         </div>
 
                         <div class="col">
-                            <p *ngIf="product.discount != 0.00">You Save: {{product.discount! * quantity * product.price| currency}} ({{product.discount! | percent}})</p>
+                            <p *ngIf="product.discount != 0.00" style="color: green;">You Save: {{product.discount! * quantity * product.price| currency}} ({{product.discount! | percent}})</p>
                             <p *ngIf="quantity > product.inventory" style="color: red;">Insufficient Inventory</p>
                             <div class="add-to-cart" *ngIf="quantity <= product.inventory; else elseButton">
                                 <button class="add-to-cart" class="btn btn-light" (click)="AddToCart()" style="color:green">
@@ -59,7 +52,7 @@
                             </div>
                             <ng-template #elseButton>
                                 <div class="add-to-cart">
-                                    <button class="add-to-cart" class="btn btn-light" style="color:red">
+                                    <button class="add-to-cart" class="btn btn-light" style="color:red;">
                                         Add To Cart
                                     </button>
                                 </div>
@@ -78,7 +71,7 @@
             </div>
             <div class="row">
                 <div class="col border">
-                    <span>Details</span>
+                    <span style="font-weight: bold;">Details</span>
                     <p>
                         {{product.description}}
                     </p>

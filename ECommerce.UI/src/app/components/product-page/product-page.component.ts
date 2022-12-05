@@ -54,6 +54,7 @@ export class ProductPageComponent implements OnInit {
 
   //call addtocart function
   public AddToCart(){
+    this.product.price = this.realPrice;
     this.productService.AddtoCartService( {product : this.product, quantity:this.quantity})
   }
 }
