@@ -23,21 +23,7 @@ export class ProductService {
   private productUrl: string = '/Product/';
   private purchaseURL: string = '/Purchase?userId='
 
-  //testing _cart
-  p1 : Product = {
-    id: 1,
-    //apiId?: number;
-    name: 'n1',
-    type: 't1',
-    brand: 'b1',
-    inventory: 1,
-    price: 9.88,
-    description: 'string',
-    image: 'line'
-    //colourName?:string;
-    //hexValue?:string;
-    //discount?: number;
-  }
+
   
 
   private _cart = new BehaviorSubject<Cart>({
