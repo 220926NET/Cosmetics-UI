@@ -77,25 +77,25 @@ export class CheckoutComponent implements OnInit {
     }
 
     if(this.finalProducts.length > 0) {
-    //   this.productService.purchase(this.finalProducts).subscribe(
-    //     (resp) => console.log(resp),
-    //     (err) => console.log(err),
-    //     () => {
-    //       let cart = {
-    //         cartCount: 0,
-    //         products: [],
-    //         totalPrice: 0.00
-    //       };
-    //       this.productService.setCart(cart);
-    //       this.router.navigate(['/purchase-success']);
-    //     } 
-    //   );
+      this.productService.purchase(this.finalProducts).subscribe(
+        (resp) => console.log(resp),
+        (err) => console.log(err),
+        () => {
+          this.router.navigate(['/purchase-success'])
+          let cart = {
+            cartCount: 0,
+            products: [],
+            totalPrice: 0.00
+          };
+          this.productService.setCart(cart);
+        } 
+      );
 
-    // } else {
-      //alert("empty cart")
+    } else {
+      alert("empty cart")
       //this.router.navigate(['/purchase-success']);
     }
-    this.router.navigate(['/purchase-success']);
+    //this.router.navigate(['/purchase-success']);
     this.paymentInfoService.savePaymentInfo(this.paymentInfo)
   }
 

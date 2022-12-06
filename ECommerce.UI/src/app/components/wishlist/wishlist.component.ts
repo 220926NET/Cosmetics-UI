@@ -23,6 +23,10 @@ export class WishlistComponent implements OnInit {
   subscription!: Subscription;
   totalPrice: number = 0;
   
+  emptyProduct : Product = new Product(0,0,"","","",0,0.0,"","","","",0);
+  emptyWishlistItem : WishlistItem = new WishlistItem(0,0,0,this.emptyProduct);
+  userId = 0;
+  
   constructor(private wish: WishService, private productService: ProductService) { }
   
   ngOnInit(): void {
@@ -30,6 +34,7 @@ export class WishlistComponent implements OnInit {
     if(userIdIfLoggedIn != null){
       this.loggedIn = true;
       let userIdToInt = parseInt(userIdIfLoggedIn);
+      this.userId = userIdToInt;
       //currently when a user logs in through the login component session storage gets hard coded with a 2
       this.getUsersWishlist(userIdToInt);
     }
@@ -81,19 +86,17 @@ export class WishlistComponent implements OnInit {
       this.productService.setCart(cart);
     }
   }
+
+  removeItemFromWishList(dId : number){
+    this.wish.deleteFromWishlist(dId).subscribe(() =>
+      this.getUsersWishlist(this.userId)
+    )
+      
+  
+  }
+
   ngOnDestroy() {
     this.subscription.unsubscribe();
   }
 
-  removeItemFromWishList(dId : number){
-    this.wish.deleteFromWishlist(dId).subscribe(()=>{
-      //reload wishlist to reflect change
-      var userIdIfLoggedIn = sessionStorage.getItem('userId')
-      if(userIdIfLoggedIn != null){
-        let userIdToInt = parseInt(userIdIfLoggedIn);
-        this.getUsersWishlist(userIdToInt);
-      }
-
-    });
-  }
 }

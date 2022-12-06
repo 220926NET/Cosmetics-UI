@@ -4,6 +4,7 @@ import { ProductService } from 'src/app/services/product.service';
 import { ReviewService } from 'src/app/services/review.service';
 import { Product } from 'src/app/models/product';
 import { ActivatedRoute } from '@angular/router'
+import { WishService } from 'src/app/services/wish.service';
 
 @Component({
   selector: 'app-product-page',
@@ -17,13 +18,15 @@ export class ProductPageComponent implements OnInit {
   product:Product = {} as Product;
   quantity: number = 1;
   realPrice: number = 0.00;
+  wishlistId = 0;
   
 
   reviews:Review[] = [];
   constructor(
     private reviewService:ReviewService, 
     private productService:ProductService,
-    private route: ActivatedRoute
+    private route: ActivatedRoute,
+    private wishService : WishService
     ) {}
 
   ngOnInit(): void {
@@ -40,6 +43,17 @@ export class ProductPageComponent implements OnInit {
       this.realPrice = this.productList[0].price - (this.productList[0].price * (this.productList[0].discount ?? 0));
     });
     this.reviewService.getByApiId(this.apiId, true).subscribe(data => this.reviews = data);
+    //this grabs the info for wishlist
+    let idAsString = sessionStorage.getItem("ID")
+    if(idAsString != null){
+      let idNum = parseInt(idAsString);
+      this.wishService.getWishlist(idNum).subscribe((ws)=>{
+        this.wishlistId = ws.id;
+      })
+
+    }
+    
+
   }
 
   public updateQuantity(e:any){
@@ -56,5 +70,13 @@ export class ProductPageComponent implements OnInit {
   public AddToCart(){
     this.product.price = this.realPrice;
     this.productService.AddtoCartService( {product : this.product, quantity:this.quantity})
+  }
+
+  public AddToWishlist(){
+    let productId = this.product.id;
+    let userIdAsString = sessionStorage.getItem("ID");
+    if(userIdAsString != null){
+      this.wishService.addToWishlist(this.wishlistId, productId).subscribe();
+    }
   }
 }

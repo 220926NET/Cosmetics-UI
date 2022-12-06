@@ -1,93 +1,106 @@
-<div class="container">
-    <div class="row">
-        <div class="col border">
-            <div class="discount" *ngIf="product.discount != 0.00">-{{product.discount! | percent}}</div>
-            <img class="centerImage" [src]="product.image"></div>
-        
-        <div class="col">
-            <div class="row">
-                <div class="col border"><span style="font-weight: bold;">Color Options</span>
-                    <br>
-                    <div class="btn-group" >
-                        <button  class="colorOption" *ngFor="let Product of productList" style=" background-color: {{Product.hexValue}}" (click)="product=Product"></button>
-                    </div>
-                    
-                    <!---->
-                    <div class ="row">
-                        <div class="col">
-                            <p style="font-weight: bold;">Quantity</p>
-                            <select class="btn btn-light" *ngIf="quantity <= product.inventory; else elseBlock" style="color:green;" (change)="updateQuantity($event)">
-                                <option hidden default>{{quantity}}</option>
-                                <option>1</option>
-                                <option>2</option>
-                                <option>3</option>
-                                <option>4</option>
-                                <option>5</option>
-                            </select>
-                            <ng-template #elseBlock>
-                                <select class="btn btn-light" style="color:red;" (change)="updateQuantity($event)">
-                                    <option hidden default>{{quantity}}</option> 
+<div class="container" id="pc-container">
+    <div class="name-holder col border">
+        <p id="productName">{{productList[0].name}}</p>
+        <div class="row">
+            <div class="col border">
+                <div class="discount" *ngIf="product.discount != 0.00">-{{product.discount! | percent}}</div>
+                <img class="centerImage" [src]="product.image"></div>
+            
+            <div class="col">
+                <div class="row">
+                    <div class="col border"><span style="font-weight: bold;">Color Options</span>
+                        <br>
+                        <div class="btn-group" >
+                            <button  class="colorOption" *ngFor="let Product of productList" style=" background-color: {{Product.hexValue}}" (click)="product=Product"></button>
+                        </div>
+                        
+                        <!----> 
+                        <div class ="row">
+                            <div class="col">
+                                <p style="font-weight: bold;">Quantity</p>
+                                <select class="btn btn-light" *ngIf="quantity <= product.inventory; else elseBlock" style="color:green;" (change)="updateQuantity($event)">
+                                    <option hidden default>{{quantity}}</option>
                                     <option>1</option>
                                     <option>2</option>
                                     <option>3</option>
                                     <option>4</option>
                                     <option>5</option>
                                 </select>
-                            </ng-template>
-                        </div>
-
-                        <div class="col">
-                            <div style="font-weight: bold;">Price</div>
-                            <div class="oldPrice" *ngIf="product.discount != 0.00">{{product.price * quantity| currency}}</div>
-                            <p>{{realPrice | currency}}</p>
-                        </div>
-
-                        <div class="col">
-                            <p *ngIf="product.discount != 0.00" style="color: green;">You Save: {{product.discount! * quantity * product.price| currency}} ({{product.discount! | percent}})</p>
-                            <p *ngIf="quantity > product.inventory" style="color: red;">Insufficient Inventory</p>
-                            <div class="add-to-cart" *ngIf="quantity <= product.inventory; else elseButton">
-                                <button class="add-to-cart" class="btn btn-light" (click)="AddToCart()" style="color:green">
-                                    Add To Cart
-                                </button>
+                                <ng-template #elseBlock>
+                                    <select class="btn btn-light" style="color:red;" (change)="updateQuantity($event)">
+                                        <option hidden default>{{quantity}}</option> 
+                                        <option>1</option>
+                                        <option>2</option>
+                                        <option>3</option>
+                                        <option>4</option>
+                                        <option>5</option>
+                                    </select>
+                                </ng-template>
                             </div>
-                            <ng-template #elseButton>
-                                <div class="add-to-cart">
-                                    <button class="add-to-cart" class="btn btn-light" style="color:red;">
+
+                            <div class="col">
+                                <div style="font-weight: bold;">Price</div>
+                                <div class="oldPrice" *ngIf="product.discount != 0.00">{{product.price * quantity| currency}}</div>
+                                <p>{{realPrice | currency}}</p>
+                            </div>
+
+                            <div class="col">
+                                <p *ngIf="product.discount != 0.00" style="color: green;">You Save: {{product.discount! * quantity * product.price| currency}} ({{product.discount! | percent}})</p>
+                                <p *ngIf="quantity > product.inventory" style="color: red;">Insufficient Inventory</p>
+                                <div class="add-to-cart" *ngIf="quantity <= product.inventory; else elseButton">
+                                    <button class="add-to-cart" class="btn btn-light" (click)="AddToCart()" style="color:green">
                                         Add To Cart
                                     </button>
+                                    <div >
+                                        <button class="add-to-wishlist"class="btn btn-light" (click)="AddToWishlist()" style="color:blueviolet;">
+                                            Add To Wishlist
+                                        </button>
+                                    </div>
                                 </div>
-                            </ng-template>
+                                <ng-template #elseButton>
+                                    <div class="add-to-cart">
+                                        <button class="add-to-cart" class="btn btn-light" style="color:red;">
+                                            Add To Cart
+                                        </button>
+                                    </div>
+                                    <div >
+                                        <button class="add-to-wishlist" class="btn btn-light" style="color:red;">
+                                            Add To Wishlist
+                                        </button>
+                                    </div>
+                                </ng-template>
+                            </div>
                         </div>
-                    </div>
-                    <!---->
+                        <!---->
 
-                    
+                        
+                    </div>
+                    <!-- <div class="add-to-cart">
+                        <button class="add-to-cart" class="btn btn-light" (click)="AddToCart()" style="color:green">
+                            Add To Cart
+                        </button>
+                    </div> -->
                 </div>
-                <!-- <div class="add-to-cart">
-                    <button class="add-to-cart" class="btn btn-light" (click)="AddToCart()" style="color:green">
-                        Add To Cart
-                    </button>
-                </div> -->
-            </div>
-            <div class="row">
-                <div class="col border">
-                    <span style="font-weight: bold;">Details</span>
-                    <p>
-                        {{product.description}}
-                    </p>
+                <div class="row">
+                    <div class="col border">
+                        <span style="font-weight: bold;">Details</span>
+                        <p>
+                            {{product.description}}
+                        </p>
+                    </div>
                 </div>
             </div>
         </div>
-    </div>
-    <div class="row">
-        <div class="col border">
-            <p>
-                Reviews
-            </p>
-            <div>
-                <app-product-review *ngFor="let review of reviews" [review]="review" class="m-4"></app-product-review>
+        <div class="row">
+            <div class="col border">
+                <p>
+                    Reviews
+                </p>
+                <div>
+                    <app-product-review *ngFor="let review of reviews" [review]="review" class="m-4"></app-product-review>
+                </div>
+                <app-product-review-form></app-product-review-form>
             </div>
-            <app-product-review-form></app-product-review-form>
         </div>
     </div>
 </div>

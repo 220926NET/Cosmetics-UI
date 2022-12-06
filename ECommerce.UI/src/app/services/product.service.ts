@@ -21,22 +21,9 @@ interface Cart {
 })
 export class ProductService {
   private productUrl: string = '/Product/';
+  private purchaseURL: string = '/Purchase?userId='
 
-  //testing _cart
-  p1 : Product = {
-    id: 1,
-    //apiId?: number;
-    name: 'n1',
-    type: 't1',
-    brand: 'b1',
-    inventory: 1,
-    price: 9.88,
-    description: 'string',
-    image: 'line'
-    //colourName?:string;
-    //hexValue?:string;
-    //discount?: number;
-  }
+
   
 
   private _cart = new BehaviorSubject<Cart>({
@@ -83,19 +70,36 @@ export class ProductService {
     );
   }
 
-  public purchase(
-    products: { id: number; quantity: number }[]
-  ): Observable<any> {
-    const payload = JSON.stringify(products);
-    return this.http.patch<any>(
-      environment.baseUrl + this.productUrl,
-      payload,
-      {
-        headers: environment.headers,
-        withCredentials: environment.withCredentials,
-      }
-    );
+  // public purchase(
+  //   products: { id: number; quantity: number }[]
+  // ): Observable<any> {
+  //   const payload = JSON.stringify(products);
+  //   return this.http.put<any>(
+  //     environment.baseUrl + this.productUrl,
+  //     payload,
+  //     {
+  //       headers: environment.headers,
+  //       withCredentials: environment.withCredentials,
+  //     }
+  //   );
+  // }
+
+  public purchase(products: { id: number; quantity: number }[]):Observable<any>{
+    //const payload = JSON.stringify(products);
+    const userId = sessionStorage.getItem('ID');
+    return this.http.put<any>(
+          //environment.baseUrl + this.productUrl,
+          environment.baseUrl + this.purchaseURL + userId?.toString(),
+          //`https://localhost:7078/Purchase?userId=${userId}`,
+          products,
+          {
+            headers: environment.headers,
+            withCredentials: environment.withCredentials,
+          }
+        );
   }
+
+
  
 
   //creat productlist

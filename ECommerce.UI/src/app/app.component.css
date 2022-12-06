@@ -1,7 +1,14 @@
 #appComp{
     display:flex;
     flex-direction: column;
+    height:100%;
+}
+#appNav{
+    flex:1;
 }
 #appRout{
-    
+    flex:5;
+}
+#appFoot{
+    flex:2;
 }
