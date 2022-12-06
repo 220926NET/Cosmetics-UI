@@ -1,0 +1,266 @@
+[33mcommit 19b7329e4e612c7352adb20290bdc88c4faf70e9[m[33m ([m[1;36mHEAD -> [m[1;32mpurchase-success[m[33m)[m
+Author: HaizhenHuang <hhuang56@ucmerced.edu>
+Date:   Tue Dec 6 14:59:56 2022 -0800
+
+    before merge with main
+
+[33mcommit 4760757f83ebc1f528bd19605f94fc46c0fe79bb[m
+Merge: 6188302 f612ef3
+Author: HaizhenHuang <hhuang56@ucmerced.edu>
+Date:   Tue Dec 6 14:00:33 2022 -0800
+
+    Merge branch 'main' of https://github.com/220926NET/Cosmetics-UI into purchase-success
+
+[33mcommit 61883024b90cd947945ba5d3c6f4296f26ae57e3[m
+Author: HaizhenHuang <hhuang56@ucmerced.edu>
+Date:   Tue Dec 6 13:44:41 2022 -0800
+
+    style purchase-succes page
+
+[33mcommit f612ef31f4cae9cb3c09d82f47030716bfb17c4b[m
+Merge: 58a25ae 4501368
+Author: Rushay Hays <80543521+rushayhays@users.noreply.github.com>
+Date:   Tue Dec 6 14:44:14 2022 -0600
+
+    Merge pull request #19 from 220926NET/rhTue
+    
+    Rh tue
+
+[33mcommit 450136886229d618c5bdd28d56fad6c770bac29a[m
+Author: rushayhays <rushayhays@outlook.com>
+Date:   Tue Dec 6 14:43:15 2022 -0600
+
+    product page button styling
+
+[33mcommit c26e26c8898283da11a6193d6be5eecec4697888[m
+Merge: 4c3eb19 58a25ae
+Author: HaizhenHuang <hhuang56@ucmerced.edu>
+Date:   Tue Dec 6 12:15:16 2022 -0800
+
+    Merge branch 'main' of https://github.com/220926NET/Cosmetics-UI into purchase-success
+
+[33mcommit ab1538b51c9a936777e12448b806902e71bcd8f7[m
+Author: rushayhays <rushayhays@outlook.com>
+Date:   Tue Dec 6 14:15:08 2022 -0600
+
+    width 100% on components
+
+[33mcommit 58a25aeb8b694d71789f31c1babe90b503f737e8[m
+Merge: 5196def e201a98
+Author: Rushay Hays <80543521+rushayhays@users.noreply.github.com>
+Date:   Tue Dec 6 13:43:38 2022 -0600
+
+    Merge pull request #18 from 220926NET/rhMon
+    
+    Rh mon
+
+[33mcommit e201a9851cd4fff9d6b88c57a56f1c057605b943[m
+Author: rushayhays <rushayhays@outlook.com>
+Date:   Tue Dec 6 13:41:37 2022 -0600
+
+    router link nested properly, no longer overrides other buttons
+
+[33mcommit 19c772bb48f22849c6c792bbd80e16e75ba21cc7[m
+Author: rushayhays <rushayhays@outlook.com>
+Date:   Tue Dec 6 13:33:40 2022 -0600
+
+    added error checking to addToWishlist button
+
+[33mcommit dada9674da338e726fbbac3a3c42d282b5765fbe[m
+Author: rushayhays <rushayhays@outlook.com>
+Date:   Tue Dec 6 13:24:43 2022 -0600
+
+    product page stylized
+
+[33mcommit adb401e62050b676e5d21af42e1986a9e98f0cba[m
+Author: rushayhays <rushayhays@outlook.com>
+Date:   Tue Dec 6 12:01:35 2022 -0600
+
+    sidebar buttons colored and given hover effect
+
+[33mcommit 9fdb1718ffbf0bfd52484e5e30feb82336196a91[m
+Author: rushayhays <rushayhays@outlook.com>
+Date:   Tue Dec 6 11:45:56 2022 -0600
+
+    wishlist cards now have a hove effect
+
+[33mcommit 077a834d1501f678abc9be978243d42e9bd8ec60[m
+Author: rushayhays <rushayhays@outlook.com>
+Date:   Tue Dec 6 11:43:38 2022 -0600
+
+    clicking on a card in wishlist will route you to it's product page
+
+[33mcommit d0b72ee2c60b34cdd4a542f5e5b7f23a8db2fff2[m
+Author: rushayhays <rushayhays@outlook.com>
+Date:   Tue Dec 6 11:34:12 2022 -0600
+
+    html and css modified do that footer stays at the bottom of the page, add to wishlist button added in product-page
+
+[33mcommit 4c3eb19ccadbdb88435d59211e415be8481d07a4[m[33m ([m[1;31morigin/purchase-success[m[33m)[m
+Author: HaizhenHuang <hhuang56@ucmerced.edu>
+Date:   Tue Dec 6 09:24:39 2022 -0800
+
+    style purchase-success
+
+[33mcommit 5196def0b7cd2f60e31492b30f5612ce51f811b8[m
+Merge: aff0fb9 9385ef4
+Author: HaizhenHuang <114379077+HaizhenHuang@users.noreply.github.com>
+Date:   Mon Dec 5 14:36:40 2022 -0800
+
+    Merge pull request #17 from 220926NET/purchase-success
+    
+    Purchase success
+
+[33mcommit 9385ef4d3c44c339c9b385396f7d950298b25e1c[m
+Author: HaizhenHuang <hhuang56@ucmerced.edu>
+Date:   Mon Dec 5 14:29:26 2022 -0800
+
+    updated order/order detail
+
+[33mcommit 728e1d0555f2abbde476f1ea0a95f2980e9a5c18[m
+Merge: bd2722b aff0fb9
+Author: HaizhenHuang <hhuang56@ucmerced.edu>
+Date:   Mon Dec 5 14:28:15 2022 -0800
+
+    Merge branch 'main' of https://github.com/220926NET/Cosmetics-UI into purchase-success
+
+[33mcommit bd2722bfeea7dcc2a35839b5cda1cba3d797bfc4[m
+Author: HaizhenHuang <hhuang56@ucmerced.edu>
+Date:   Mon Dec 5 14:28:09 2022 -0800
+
+    before merge with main
+
+[33mcommit aff0fb90b72df34d5df5b038cbc9533b21aebc68[m
+Merge: bf31d28 8af601c
+Author: Sergio <60624471+Sergio0799@users.noreply.github.com>
+Date:   Mon Dec 5 15:23:20 2022 -0600
+
+    Merge pull request #16 from 220926NET/deals/refactor-sg
+    
+    Deals/refactor sg
+
+[33mcommit 8af601c9854b54aa0299b39a6f33620b0ac5a25a[m
+Author: Sergio0799 <sergiomontoya0723@gmail.com>
+Date:   Mon Dec 5 15:01:27 2022 -0600
+
+    Finished updating price on product cards based on deals
+
+[33mcommit bf31d28918090c7fd2e9574cd36b239fba317341[m
+Merge: eec76ed 5e25d20
+Author: emmora2 <54386684+emmora2@users.noreply.github.com>
+Date:   Mon Dec 5 13:50:14 2022 -0700
+
+    Merge pull request #15 from 220926NET/Deploy-static-app
+    
+    Add new package-lock.json
+
+[33mcommit 5e25d202d057de4530fc46a378ec324a03699be4[m
+Author: Emmanuel <emmanuelmartinez122623@gmail.com>
+Date:   Mon Dec 5 13:48:55 2022 -0700
+
+    Add new package-lock.json
+
+[33mcommit eec76ed0f9cbf078df39d5e75754aa6af11732bb[m
+Merge: 88c699f 7b43f9f
+Author: emmora2 <54386684+emmora2@users.noreply.github.com>
+Date:   Mon Dec 5 13:44:34 2022 -0700
+
+    Merge pull request #14 from 220926NET/Deploy-static-app
+    
+    fix bootstrap depen
+
+[33mcommit 7b43f9f3033a5aa73abc6cbe9a052fee3597c34e[m
+Author: Emmanuel <emmanuelmartinez122623@gmail.com>
+Date:   Mon Dec 5 13:43:03 2022 -0700
+
+    fix bootstrap depen
+
+[33mcommit 88c699f6869fc0b15071d5adabec0adfe96a0cda[m
+Merge: e606479 e2d35fe
+Author: emmora2 <54386684+emmora2@users.noreply.github.com>
+Date:   Mon Dec 5 13:41:36 2022 -0700
+
+    Merge pull request #13 from 220926NET/Deploy-static-app
+    
+    Deploy static app
+
+[33mcommit 4a08d6c4fb75a9848c1d8a8ece20e9f991c8903a[m
+Author: HaizhenHuang <hhuang56@ucmerced.edu>
+Date:   Mon Dec 5 12:40:49 2022 -0800
+
+    connected purchase api
+
+[33mcommit e2d35fe3b593733491ae15a55a4915a78a3bc27f[m
+Author: Emmanuel <emmanuelmartinez122623@gmail.com>
+Date:   Mon Dec 5 13:39:37 2022 -0700
+
+    Add api
+
+[33mcommit 346891625cfffcfce811d43a5d63289bbb2ca496[m
+Author: Emmanuel <emmanuelmartinez122623@gmail.com>
+Date:   Mon Dec 5 13:39:08 2022 -0700
+
+    Add workflows
+
+[33mcommit 43d0353f68e6b8823b8a5c7ee9a92aebdd941939[m
+Author: Sergio0799 <sergiomontoya0723@gmail.com>
+Date:   Mon Dec 5 10:29:55 2022 -0600
+
+    Implemented Deals display & price update for products
+
+[33mcommit e606479d19e0ad6a7602a6b3f87a6cfbe8e88781[m
+Merge: fb7d46c 78fe343
+Author: Sergio <60624471+Sergio0799@users.noreply.github.com>
+Date:   Sun Dec 4 20:20:42 2022 -0600
+
+    Merge pull request #12 from 220926NET/purchase-success
+    
+    Purchase success
+
+[33mcommit 78fe343d5a7be111aab45fddf8d02f941ba8fdbc[m
+Author: HaizhenHuang <hhuang56@ucmerced.edu>
+Date:   Sat Dec 3 23:05:22 2022 -0800
+
+    add quantity options
+
+[33mcommit e76bd4bc562d8997b815333f9e4676b130e9a8a9[m
+Author: HaizhenHuang <hhuang56@ucmerced.edu>
+Date:   Sat Dec 3 19:40:08 2022 -0800
+
+    color option finished
+
+[33mcommit 2003b7a28bacf8481660dd4893e1516cd9c0b4f6[m
+Author: HaizhenHuang <hhuang56@ucmerced.edu>
+Date:   Sat Dec 3 17:26:59 2022 -0800
+
+    resolve merged conflict
+
+[33mcommit 843dbae832517839f9117a4f5846ca215a007f22[m
+Merge: ea7f233 fb7d46c
+Author: HaizhenHuang <hhuang56@ucmerced.edu>
+Date:   Sat Dec 3 17:21:56 2022 -0800
+
+    pull from  main before pr
+
+[33mcommit ea7f233997bb3f7476b9e7b4a5919a6d15a2d14f[m
+Author: HaizhenHuang <hhuang56@ucmerced.edu>
+Date:   Sat Dec 3 17:19:22 2022 -0800
+
+    fixed
+
+[33mcommit 47e28ce7fa36afad985ed5239809f18f7ea410e4[m
+Author: HaizhenHuang <hhuang56@ucmerced.edu>
+Date:   Sat Dec 3 17:17:36 2022 -0800
+
+    updated purchase success page
+
+[33mcommit e22720112a4e1442d943abff685c32491dd742a0[m
+Author: HaizhenHuang <hhuang56@ucmerced.edu>
+Date:   Sat Dec 3 17:05:36 2022 -0800
+
+    purchase successful show order info
+
+[33mcommit fb7d46cb2a41bdd48b5a6694c60b3090f642d786[m
+Merge: e141783 82ebd4d
+Author: espden <despino6160@gmail.com>
+Date:   Sat Dec 3 16:55:40 2
