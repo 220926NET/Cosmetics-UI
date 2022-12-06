@@ -4,12 +4,12 @@
             <h1>Wishlist</h1>
         </div>
         <div *ngFor="let item of pageWishList.wishItems">
-            <div class="wishCard" routerLink="/product/{{item.product.apiId}}">
+            <div class="wishCard">
                 <div class="wishImageArea">
                     <img [src]="item.product.image" alt="make-up product" height="150px" />
                 </div>
                 <div class="wishInfo">
-                    <p>{{item.product.name}}</p>
+                    <p routerLink="/product/{{item.product.apiId}}" id="wish-item-name">{{item.product.name}}</p>
                     
                     <p>{{item.product.price}}</p>
                     <div class="wishButtonArea">

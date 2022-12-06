@@ -38,3 +38,10 @@
     display: flex;
     flex-direction: column;
 }
+
+#wish-item-name{
+    
+}
+#wish-item-name:hover{
+    cursor: pointer;
+}
