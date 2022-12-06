@@ -4,7 +4,7 @@
 <!--
 <h3>Total Price : ${{totalPrice}}</h3>
 -->
-<h1 style="font-weight: 500;">Total Price : $99.99</h1>
+<h1 style="font-weight: 500;">Total Price : ${{totalPrice}}</h1>
 
 <br>
 
@@ -30,19 +30,19 @@
         -->
         <tbody>
         <tr>
-            <td>Name: haizhen</td>
+            <td>Name: {{paymentInfo.cardName}}</td>
         </tr>
         <tr>
-            <td>Street: 926 madison st</td>
+            <td>Street: {{paymentInfo.detail}}</td>
         </tr>
         <tr>
-            <td>City: oakland</td>
+            <td>City: {{paymentInfo.city}}</td>
         </tr>
         <tr>
-            <td>State: CA</td>
+            <td>State: {{paymentInfo.state}}</td>
         </tr>
         <tr>
-            <td>ZipCode: 94607</td>
+            <td>ZipCode: {{paymentInfo.zipCode}}</td>
         </tr>
     </tbody>
     </table>
@@ -70,7 +70,7 @@
     -->
    
    
-   <table class="table table-hover" style="width:100% ;">
+   <table *ngFor="let Product of products" class="table table-hover" style="width:100% ;">
         <thead>
             <tr>
                 <th>Product Name</th>
@@ -81,29 +81,9 @@
 
         <tbody>
             <tr>
-                <td>xxxxxxx</td>
-                <td>green</td>
-                <td>3</td>
-            </tr>
-            <tr>
-                <td>xxxxxxx</td>
-                <td>green</td>
-                <td>3</td>
-            </tr>
-            <tr>
-                <td>xxxxxxx</td>
-                <td>green</td>
-                <td>3</td>
-            </tr>
-            <tr>
-                <td>xxxxxxx</td>
-                <td>green</td>
-                <td>3</td>
-            </tr>
-            <tr>
-                <td>xxxxxxx</td>
-                <td>green</td>
-                <td>3</td>
+                <td>{{Product.product.name}}</td>
+                <td>{{Product.product.colourName}}</td>
+                <td>{{Product.quantity}}</td>
             </tr>
         </tbody>
    </table>
