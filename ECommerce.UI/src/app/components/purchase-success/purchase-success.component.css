@@ -1,8 +1,32 @@
 table, td {
     border:2px solid black; 
-    width: auto
+    width: 600px;
+    height: 60px;
+    size: 200%;
+
 }
 
 
 
+
+img {
+    position: relative;
+    height: 700px;
+    width: 800px;
+}
+
+h1#title{
+    margin-left: auto;
+    margin-right: auto;
+    width: 8em;
+    font-size: 500%;
+}
+
+h3#totalPrice{
+    margin-left: auto;
+    margin-right: auto;
+    width: 8em;
+    font-size: 500%;
+    font-size: 400%;
+}
 

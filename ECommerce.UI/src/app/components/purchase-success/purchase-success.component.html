@@ -1,9 +1,14 @@
 
-<h1>Purchase success!</h1>
+<h1 id="title">Purchase success!</h1>
+<table class="table table-dark">
+    <h3 id="totalPrice">Total Price : 32.99</h3>
+</table>
 <br>
-<div>
+
+<div id="billing" style="float:left; display:inline;">
     <h4>BILLING ADDRESS</h4>
-    <table>
+    <table class="table table-dark">
+        <!--
         <tr>
             <td>Name: {{paymentInfo.cardName}}</td>
         </tr>
@@ -19,13 +24,35 @@
         <tr>
             <td>ZipCode: {{paymentInfo.zipCode}}</td>
         </tr>
+        -->
+
+        <tr>
+            <td>Name: haizhen</td>
+        </tr>
+        <tr>
+            <td>Street: 926 madison st</td>
+        </tr>
+        <tr>
+            <td>City: oakland</td>
+        </tr>
+        <tr>
+            <td>State: CA</td>
+        </tr>
+        <tr>
+            <td>ZipCode: 94607</td>
+        </tr>
+
     </table>
+
 
 </div>
 
-<div>
+
+<div id="orderInfo" style="float:left; display:inline;">
     <h4>Order Information</h4>
+   <!--
     <table *ngFor="let Product of products">
+        
         <tr>
             <td>Product Name: {{Product.product.name}}</td>
         </tr>
@@ -35,9 +62,68 @@
         <tr>
             <td>Quantity : {{Product.quantity}}</td>
         </tr>
+        
     </table>
+   -->
+   <table class="table table-dark">
+    <tr>
+        <td>Product Name: xxxxxxxxxxx</td>
+    </tr>
+    <tr>
+        <td>Color: xxxxxxxxxxxxxx</td>
+    </tr>
+    <tr>
+        <td>Quantity : xxxxxxxxxxxxx</td>
+    </tr>
+   </table>
+   <table class="table table-dark">
+    <tr>
+        <td>Product Name: xxxxxxxxxxx</td>
+    </tr>
+    <tr>
+        <td>Color: xxxxxxxxxxxxxx</td>
+    </tr>
+    <tr>
+        <td>Quantity : xxxxxxxxxxxxx</td>
+    </tr>
+   </table>
+   <table class="table table-dark">
+    <tr>
+        <td>Product Name: xxxxxxxxxxx</td>
+    </tr>
+    <tr>
+        <td>Color: xxxxxxxxxxxxxx</td>
+    </tr>
+    <tr>
+        <td>Quantity : xxxxxxxxxxxxx</td>
+    </tr>
+   </table>
+   <table class="table table-dark">
+    <tr>
+        <td>Product Name: xxxxxxxxxxx</td>
+    </tr>
+    <tr>
+        <td>Color: xxxxxxxxxxxxxx</td>
+    </tr>
+    <tr>
+        <td>Quantity : xxxxxxxxxxxxx</td>
+    </tr>
+   </table>
+   <table class="table table-dark">
+    <tr>
+        <td>Product Name: xxxxxxxxxxx</td>
+    </tr>
+    <tr>
+        <td>Color: xxxxxxxxxxxxxx</td>
+    </tr>
+    <tr>
+        <td>Quantity : xxxxxxxxxxxxx</td>
+    </tr>
+   </table>
+    
 
 </div>
-
+<!--
 <h3>Total Price : {{totalPrice}}</h3>
-
+-->
+<img src="../../../assets/images/26465943.jpg" id="navLogo" alt="cosmo logo"> 
