@@ -3,6 +3,7 @@ import { Component, OnInit } from '@angular/core';
 import { ProductDetails } from 'src/app/models/ProductDetails/ProductDetails';
 import { ProductService } from 'src/app/services/product.service';
 
+
 @Component({
   selector: 'app-display-products',
   templateUrl: './display-products.component.html',
@@ -17,7 +18,9 @@ export class DisplayProductsComponent implements OnInit {
 
   productCount = 6;
 
-  page = 1; 
+  page = 1;
+  
+
 
   // todo only display 6 products per page
 
@@ -27,6 +30,7 @@ export class DisplayProductsComponent implements OnInit {
       this.productsToShow = this.products.slice(0, 6);
      
     });
+    
   }
 
   getSelectedProduct(product: string) {

@@ -49,11 +49,21 @@
                                 <button class="add-to-cart" class="btn btn-light" (click)="AddToCart()" style="color:green">
                                     Add To Cart
                                 </button>
+                                <div >
+                                    <button class="add-to-wishlist"class="btn btn-light" (click)="AddToWishlist()" style="color:blueviolet;">
+                                        Add To Wishlist
+                                    </button>
+                                </div>
                             </div>
                             <ng-template #elseButton>
                                 <div class="add-to-cart">
                                     <button class="add-to-cart" class="btn btn-light" style="color:red;">
                                         Add To Cart
+                                    </button>
+                                </div>
+                                <div >
+                                    <button class="add-to-wishlist" class="btn btn-light" style="color:red;">
+                                        Add To Wishlist
                                     </button>
                                 </div>
                             </ng-template>
