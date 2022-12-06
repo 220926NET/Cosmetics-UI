@@ -12,7 +12,7 @@ describe('DisplayProductsComponent', () => {
   let component: DisplayProductsComponent;
   let fixture: ComponentFixture<DisplayProductsComponent>;
 
-  let mockProductList : ProductDetails[] = [new ProductDetails(1,"test", 100,"test", 2.99, "test", "test", ["test"])]; 
+  let mockProductList : ProductDetails[] = [new ProductDetails(1,97,"test","test", 100,"test", 2.99, "test", "test", ["test"])];
  
   const mockRes: Observable<ProductDetails[]> = new Observable((subscriber) => {
     setTimeout(() => {
