@@ -1,5 +1,5 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
-
+import { HttpClientModule } from '@angular/common/http';
 import { PurchaseSuccessComponent } from './purchase-success.component';
 
 describe('PurchaseSuccessComponent', () => {
@@ -8,6 +8,7 @@ describe('PurchaseSuccessComponent', () => {
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
+      imports : [ HttpClientModule ],
       declarations: [ PurchaseSuccessComponent ]
     })
     .compileComponents();

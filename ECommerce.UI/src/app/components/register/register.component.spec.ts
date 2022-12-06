@@ -8,7 +8,7 @@ describe('RegisterComponent', () => {
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      imports : [HttpClientModule],
+      imports : [ HttpClientModule ],
       declarations: [ RegisterComponent ]
     })
     .compileComponents();
