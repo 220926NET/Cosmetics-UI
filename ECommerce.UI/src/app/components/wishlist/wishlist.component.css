@@ -2,11 +2,12 @@
     display:flex;
     justify-content: space-around;
     height:100%;
+    margin-bottom:40px;
 }
 .wishArea{
     display:flex;
     flex-direction: column;
-    gap:10px;
+    gap:20px;
     
 }
 .wishCard{
@@ -15,6 +16,11 @@
     padding: 5px;
     color:white;
 }
+
+.wishCard:hover {
+    box-shadow: 0 5px 10px rgba(0, 0, 0, 0.2);
+    transform: translate3d(0, -10px, 0);
+  }
 
 .wishImageArea{
     flex:1;
@@ -31,4 +37,11 @@
 .notice{
     display: flex;
     flex-direction: column;
+}
+
+#wish-item-name{
+    
+}
+#wish-item-name:hover{
+    cursor: pointer;
 }

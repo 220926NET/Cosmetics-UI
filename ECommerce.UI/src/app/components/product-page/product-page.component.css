@@ -1,3 +1,14 @@
+#pc-container{
+    margin-top:50px;
+    margin-bottom: 50px;
+}
+
+#productName{
+    margin:0;
+    padding-top:5px;
+    padding-bottom:5px;
+}
+
 button.colorOption{
     height: 20px; 
     margin: 5px ;
@@ -38,4 +49,8 @@ button.colorOption:focus {
     font-size: 14px;
     border-radius: 21px;
     font-weight: 900;
-  }
+}
+
+.name-holder p{
+    font-size: large;
+}
