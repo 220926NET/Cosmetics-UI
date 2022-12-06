@@ -3,7 +3,7 @@
 <br>
 <div>
     <h4>BILLING ADDRESS</h4>
-    <table>
+    <table *ngIf="paymentInfo">
         <tr>
             <td>Name: {{paymentInfo.cardName}}</td>
         </tr>

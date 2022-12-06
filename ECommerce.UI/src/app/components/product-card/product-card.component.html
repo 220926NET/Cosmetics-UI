@@ -1,5 +1,5 @@
 
-<div class="card" style="width: 18rem" routerLink="/product/{{productInfo.apiId}}">
+<div class="card" style="width: 18rem" *ngIf="productInfo" routerLink="/product/{{productInfo.apiId}}">
   <div class="discount" *ngIf="productInfo.discount != 0.00">-{{productInfo.discount! | percent}}</div>
   <img class="card-img-top" [src]="productInfo.image" alt="Card image cap" />
   <div class="card-body">

@@ -19,7 +19,7 @@ export class AuthService {
   }
 
   logout(): void{
-    this.http.post(`${this.authUrl}/logout`, null);
+    // this.http.put(`${this.authUrl}/Logout`, null);
   }
 
   register(firstName: string, lastName: string, email: string, password: string): Observable<any> {
