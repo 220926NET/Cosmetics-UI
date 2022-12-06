@@ -1,6 +1,6 @@
 <div class="container" id="pc-container">
     <div class="name-holder col border">
-        <p id="productName">{{productList[0].name}}</p>
+        <p id="productName" *ngIf="productList[0]">{{productList[0].name}}</p>
         <div class="row">
             <div class="col border">
                 <div class="discount" *ngIf="product.discount != 0.00">-{{product.discount! | percent}}</div>

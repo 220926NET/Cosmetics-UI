@@ -59,12 +59,6 @@ describe('DisplayProductsComponent', () => {
     expect(sidebar).toBeTruthy();
   }))
 
-  it('should render a page-count', ()=> {
-    let productDetailsCard = document.querySelector(".page-count");
-    expect(productDetailsCard).toBeTruthy();
-
-  })
-
   it('should render a product container', fakeAsync(()=> {
     fixture = TestBed.createComponent(DisplayProductsComponent);
     component = fixture.componentInstance; 
