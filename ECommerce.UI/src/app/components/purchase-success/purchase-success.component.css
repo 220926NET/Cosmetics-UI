@@ -1,8 +1,10 @@
-table, td {
+table, td ,tr, tbody{
     border:2px solid black; 
-    width: 600px;
+    width: 900px;
     height: 60px;
-    size: 200%;
+    size: 170%;
+    font-size: large;
+    font-weight: 600;
 
 }
 
@@ -10,23 +12,20 @@ table, td {
 
 
 img {
-    position: relative;
-    height: 700px;
-    width: 800px;
+    
+    
+    height: 400px;
+    width: 400px;
+
+
 }
 
 h1#title{
     margin-left: auto;
     margin-right: auto;
     width: 8em;
-    font-size: 500%;
+    font-size: 600%;
+    font-weight: 600;
 }
 
-h3#totalPrice{
-    margin-left: auto;
-    margin-right: auto;
-    width: 8em;
-    font-size: 500%;
-    font-size: 400%;
-}
 
