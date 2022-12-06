@@ -12,8 +12,15 @@
 
 .sidebar-product {
   height: 100px;
-  background-color: rgba(230, 215, 215, 0.5);
+  /* background-color: rgba(230, 215, 215, 0.5); */
   display: flex;
+  /* -webkit-text-stroke: 1px black;
+  -webkit-text-fill-color: black; */
+}
+
+.sidebar-product:hover {
+  box-shadow: 0 5px 10px rgba(0, 0, 0, 0.2);
+  transform: translate3d(-10px, 0, 0);
 }
 
 .side-bar-product-text {
@@ -21,5 +28,21 @@
   text-transform: uppercase;
   text-decoration: underline;
   cursor: pointer;
+}
+
+#lipstick{
+  background-color:rgb(156, 80, 255)
+}
+#eyeshadow{
+ background-color: rgb(18, 1, 252);
+}
+#eyeliner{
+  background-color: rgb(0, 162, 255);
+}
+#foundation{
+  background-color: rgb(7, 247, 255);
+}
+#blush{
+  background-color: rgb(0, 255, 157);
 }
  
