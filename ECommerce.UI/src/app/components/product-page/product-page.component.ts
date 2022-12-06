@@ -74,6 +74,9 @@ export class ProductPageComponent implements OnInit {
 
   public AddToWishlist(){
     let productId = this.product.id;
-    this.wishService.addToWishlist(this.wishlistId, productId).subscribe();
+    let userIdAsString = sessionStorage.getItem("ID");
+    if(userIdAsString != null){
+      this.wishService.addToWishlist(this.wishlistId, productId).subscribe();
+    }
   }
 }
