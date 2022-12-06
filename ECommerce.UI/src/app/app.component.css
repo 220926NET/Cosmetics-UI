@@ -2,13 +2,14 @@
     display:flex;
     flex-direction: column;
     height:100%;
+    justify-content: space-between;
 }
 #appNav{
-    flex:1;
+    
 }
 #appRout{
-    flex:5;
+    
 }
 #appFoot{
-    flex:2;
+    align-self: flex-end;
 }
