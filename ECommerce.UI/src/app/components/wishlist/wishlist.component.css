@@ -2,6 +2,7 @@
     display:flex;
     justify-content: space-around;
     height:100%;
+    margin-bottom:40px;
 }
 .wishArea{
     display:flex;
