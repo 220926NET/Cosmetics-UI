@@ -9,7 +9,9 @@ import { compileNgModule } from '@angular/compiler';
 import {By} from "@angular/platform-browser"
 
 describe('DisplayProductsComponent', () => {
+
   let component: DisplayProductsComponent;
+
   let fixture: ComponentFixture<DisplayProductsComponent>;
 
   let mockProductList : ProductDetails[] = [new ProductDetails(1,97,"test","test", 100,"test", 2.99, "test", "test", ["test"])]; 
@@ -81,4 +83,6 @@ describe('DisplayProductsComponent', () => {
     let productDetailsCard = document.querySelector(".cardListItem");
     expect(productDetailsCard).toBeTruthy();
   }))
+
+  
 });
