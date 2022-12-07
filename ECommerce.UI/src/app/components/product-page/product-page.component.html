@@ -41,7 +41,7 @@
                             <div class="col">
                                 <div style="font-weight: bold;">Price</div>
                                 <div class="oldPrice" *ngIf="product.discount != 0.00">{{product.price * quantity| currency}}</div>
-                                <p>{{realPrice | currency}}</p>
+                                <p>{{realPrice * quantity | currency}}</p>
                             </div>
 
                             <div class="col">
