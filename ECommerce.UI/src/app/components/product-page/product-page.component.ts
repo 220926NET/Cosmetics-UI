@@ -61,12 +61,12 @@ export class ProductPageComponent implements OnInit {
   public updateQuantity(e:any){
     this.quantity = e.target.value;
     console.log(this.quantity);
-    this.updatePrice();
+    //this.updatePrice();
   }
   
-  public updatePrice() {
-    this.realPrice = (this.quantity * this.product.price) - (this.quantity * this.product.price * (this.product.discount ?? 0));
-  }
+  // public updatePrice() {
+  //   this.realPrice = (this.quantity * this.product.price) - (this.quantity * this.product.price * (this.product.discount ?? 0));
+  // }
 
   //call addtocart function
   public AddToCart(){
