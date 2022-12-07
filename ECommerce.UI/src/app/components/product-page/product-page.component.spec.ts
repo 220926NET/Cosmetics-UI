@@ -24,14 +24,6 @@ describe('ProductPageComponent', () => {
     expect(component).toBeTruthy();
   });
 
-  it('should update quantity', () => {
-    fixture = TestBed.createComponent(ProductPageComponent);
-    component = fixture.componentInstance;
-    component.updateQuantity(1);
-    fixture.detectChanges();
-    expect(component.quantity).toEqual(2);
-  })
-
  
 
 });
