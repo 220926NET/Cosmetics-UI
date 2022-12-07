@@ -1,43 +1,97 @@
+<h1 id="title">Purchase success!</h1>
+<div id="body">
 
-<h1>Purchase success!</h1>
-<br>
-<div>
-    <h4>BILLING ADDRESS</h4>
-    <table *ngIf="paymentInfo">
-        <tr>
-            <td>Name: {{paymentInfo.cardName}}</td>
-        </tr>
-        <tr>
-            <td>Street: {{paymentInfo.detail}}</td>
-        </tr>
-        <tr>
-            <td>City: {{paymentInfo.city}}</td>
-        </tr>
-        <tr>
-            <td>State: {{paymentInfo.state}}</td>
-        </tr>
-        <tr>
-            <td>ZipCode: {{paymentInfo.zipCode}}</td>
-        </tr>
+    <!--
+    <h3>Total Price : ${{totalPrice}}</h3>
+    -->
+    <h1 style="font-weight: 500;">Total Price : ${{totalPrice}}</h1>
+
+    <br>
+
+    <div id="billing" style="float: left; display:inline">
+ 
+        <table class="table table-hover" style="width:70% ">
+            <h3>BILLING ADDRESS</h3>
+        <!--
+        <table *ngIf="paymentInfo">
+            <tr>
+                <td>Name: {{paymentInfo.cardName}}</td>
+            </tr>
+            <tr>
+                <td>Street: {{paymentInfo.detail}}</td>
+            </tr>
+            <tr>
+                <td>City: {{paymentInfo.city}}</td>
+            </tr>
+            <tr>
+                <td>State: {{paymentInfo.state}}</td>
+            </tr>
+            <tr>
+                <td>ZipCode: {{paymentInfo.zipCode}}</td>
+            </tr>
+            -->
+            <tbody>
+            <tr>
+                <td>Name: {{paymentInfo.cardName}}</td>
+            </tr>
+            <tr>
+                <td>Street: {{paymentInfo.detail}}</td>
+            </tr>
+            <tr>
+                <td>City: {{paymentInfo.city}}</td>
+            </tr>
+            <tr>
+                <td>State: {{paymentInfo.state}}</td>
+            </tr>
+            <tr>
+                <td>ZipCode: {{paymentInfo.zipCode}}</td>
+            </tr>
+        </tbody>
+        </table>
+        
+    </div>
+
+    <br>
+    <img src="../../../assets/images/26465943.jpg" id="navLogo" alt="cosmo logo" style="float:left;display: inline;">
+    <div id="orderInfo">
+        
+    <!--
+        <table *ngFor="let Product of products" class="table table-dark">
+            
+            <tr>
+                <td>Product Name: {{Product.product.name}}</td>
+            </tr>
+            <tr>
+                <td>Color: {{Product.product.colourName}}</td>
+            </tr>
+            <tr>
+                <td>Quantity : {{Product.quantity}}</td>
+            </tr>
+            
+        </table>
+        -->
+    
+    
+    <table  class="table table-hover" style="width:100% ;">
+            <thead>
+                <h3>ORDER INFORMATION</h3>
+                <tr>
+                    <th>Product Name</th>
+                    <th>Color</th>
+                    <th>Quantity</th>
+                </tr>
+            </thead>
+
+            <tbody *ngFor="let Product of products">
+                <tr>
+                    <td>{{Product.product.name}}</td>
+                    <td>{{Product.product.colourName}}</td>
+                    <td>{{Product.quantity}}</td>
+                </tr>
+            </tbody>
     </table>
+    </div>
 
 </div>
 
-<div>
-    <h4>Order Information</h4>
-    <table *ngFor="let Product of products">
-        <tr>
-            <td>Product Name: {{Product.product.name}}</td>
-        </tr>
-        <tr>
-            <td>Color: {{Product.product.colourName}}</td>
-        </tr>
-        <tr>
-            <td>Quantity : {{Product.quantity}}</td>
-        </tr>
-    </table>
-
-</div>
-
-<h3>Total Price : {{totalPrice}}</h3>
 
