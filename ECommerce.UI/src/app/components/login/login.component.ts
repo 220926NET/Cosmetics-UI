@@ -14,6 +14,8 @@ export class LoginComponent implements OnInit {
     email: new UntypedFormControl(''),
     password: new UntypedFormControl('')
   })
+  badLogin: boolean = false;
+  incorrectMessage: string = "Invalid Login, Try Again";
   
 
   constructor(private authService: AuthService, private router: Router) { }
@@ -27,12 +29,17 @@ export class LoginComponent implements OnInit {
         sessionStorage.setItem("ID", res['id'])
       },
       () => {
-        this.authService.loggedIn=true;
+        if (!sessionStorage.getItem('ID')) {
+          this.badLogin = true;
+        }
+        else  {
+          this.authService.loggedIn=true;
+          this.badLogin = false;
+        }
       },
       //(err) => console.log(err),
-      () => this.router.navigate(['home'])
+      () => this.router.navigate(['home']),
     );
-    //code added by Rushay for Wishlist
   }
 
   register(): void {
