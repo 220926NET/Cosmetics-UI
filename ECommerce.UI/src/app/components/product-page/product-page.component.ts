@@ -5,6 +5,7 @@ import { ReviewService } from 'src/app/services/review.service';
 import { Product } from 'src/app/models/product';
 import { ActivatedRoute } from '@angular/router'
 import { WishService } from 'src/app/services/wish.service';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-product-page',
@@ -26,7 +27,8 @@ export class ProductPageComponent implements OnInit {
     private reviewService:ReviewService, 
     private productService:ProductService,
     private route: ActivatedRoute,
-    private wishService : WishService
+    private wishService : WishService,
+    private router: Router
     ) {}
 
   ngOnInit(): void {
@@ -70,6 +72,7 @@ export class ProductPageComponent implements OnInit {
   public AddToCart(){
     this.product.price = this.realPrice;
     this.productService.AddtoCartService( {product : this.product, quantity:this.quantity})
+    this.router.navigate(['/home']);
   }
 
   public AddToWishlist(){

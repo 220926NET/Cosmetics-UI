@@ -1,9 +1,19 @@
 .table 
 {
     margin: 3%;
+    max-width: 1750px;
 }
+
 
 .btn
 {
-    margin-left: 2%;
+    margin-left: 3%;
+}
+
+.cartClass{
+    margin-top:-15%;
+   
+}
+.cart-table-body{
+
 }

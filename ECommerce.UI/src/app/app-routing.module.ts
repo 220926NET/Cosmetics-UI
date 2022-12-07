@@ -15,7 +15,7 @@ const routes: Routes = [
   { path: "login", component: LoginComponent },
   { path: "register", component: RegisterComponent },
   { path: "home", component: DisplayProductsComponent },
-  { path: "cart", component: CartComponent },
+  { path: "cart", component:CartComponent},
   { path: "checkout", component: CheckoutComponent },
   { path: "wishlist", component: WishlistComponent},
   { path: "product/:apiid", component: ProductPageComponent },
