@@ -9,6 +9,7 @@
       <label for="exampleInputPassword1">Password</label>
       <input type="password" class="form-control" formControlName="password" id="exampleInputPassword1" placeholder="Password">
     </div>
+    <p *ngIf="badLogin" style="color:red;">{{incorrectMessage}}</p>
     <button class="btn btn-primary" (click)="onSubmit()">Login</button>
     <div>
       <label>New User?</label>
