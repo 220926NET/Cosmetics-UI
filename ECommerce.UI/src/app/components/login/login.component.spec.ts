@@ -1,11 +1,14 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 import { HttpClientModule } from '@angular/common/http';
 import { LoginComponent } from './login.component';
-import { DebugElement } from '@angular/core';
+import { AuthService } from 'src/app/services/auth.service';
+import { Observable } from 'rxjs';
+import { User } from '../../models/user';
 
 describe('LoginComponent', () => {
   let component: LoginComponent;
   let fixture: ComponentFixture<LoginComponent>;
+  let mockAuthService: AuthService;
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
@@ -15,7 +18,11 @@ describe('LoginComponent', () => {
     .compileComponents();
   });
 
+  const mockUser : User = new User(1, "First", "Last");
+
   beforeEach(() => {
+    mockAuthService = TestBed.inject(AuthService);
+    spyOn(mockAuthService, 'login').and.returnValue(new Observable((res) => {res.next(mockUser); res.complete();}));
     fixture = TestBed.createComponent(LoginComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
@@ -25,13 +32,13 @@ describe('LoginComponent', () => {
     expect(component).toBeTruthy();
   });
 
-  // it('should display error message when incorrect login', () => {
-  //   component.badLogin = true;
+  it('should expect User info once user logs in', () => {
+    component.onSubmit();
+    expect(sessionStorage.getItem('ID')).toBeTruthy();
+  });
 
-  //   const bDe: DebugElement = fixture.debugElement;
-  //   const bEl: HTMLElement = bDe.nativeElement;
-  //   component.badLogin = true;
-  //   const p = bEl.querySelector('.error')!;
-  //   expect(bEl.textContent).toBeTruthy;
-  // });
+  it('should exist after attempt to register', () => {
+    component.register();
+    expect(component).toBeTruthy();
+  });
 });
