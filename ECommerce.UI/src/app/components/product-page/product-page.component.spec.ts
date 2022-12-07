@@ -2,6 +2,7 @@ import { ComponentFixture, TestBed } from '@angular/core/testing';
 import { HttpClientModule } from '@angular/common/http';
 import { ProductPageComponent } from './product-page.component';
 import { RouterTestingModule } from '@angular/router/testing';
+import { ProductService } from 'src/app/services/product.service';
 
 describe('ProductPageComponent', () => {
   let component: ProductPageComponent;
@@ -22,4 +23,15 @@ describe('ProductPageComponent', () => {
   it('should create', () => {
     expect(component).toBeTruthy();
   });
+
+  it('should update quantity', () => {
+    fixture = TestBed.createComponent(ProductPageComponent);
+    component = fixture.componentInstance;
+    component.updateQuantity(1);
+    fixture.detectChanges();
+    expect(component.quantity).toEqual(2);
+  })
+
+ 
+
 });

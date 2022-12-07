@@ -17,6 +17,7 @@ export class ProductCardComponent implements OnInit {
     product: Product;
     quantity: number;
   }[] = [];
+  
   subscription!: Subscription;
   totalPrice: number = 0;
 
